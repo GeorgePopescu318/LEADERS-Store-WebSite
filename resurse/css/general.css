@@ -1,0 +1,389 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 2px;
+}
+
+html {
+    font-size: 20px;
+    background-color: var(--culoare-fundal-site);
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+body {
+    --spatiere-pagina: 50px;
+    --padding-sectiune: 15px;
+    --culoare-fundal-inchis: #C886FF;
+    --culoare-fundal-site: white;
+    --culoare-scris: #002561;
+    --culoare-meniu: #295ca9;
+    --culoare-secundara-1: #055b5d;
+    --culoare-secundara-2: #00a1a9;
+    --culoare-autohton-fundal: #faad19;
+    --culoare-autohton-scris: #797f8a;
+    --culoare-tabel-par: #f3f3f3;
+}
+
+body {
+    color: var(--culoare-scris);
+    padding-left: var(--spatiere-pagina);
+    padding-right: var(--spatiere-pagina);
+    min-width: 450px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+#grid-pagina>* {
+    border: 3px solid var(--culoare-secundara-1);
+    padding: var(--padding-sectiune);
+}
+
+
+
+#grid-pagina {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "z-cover z-cover z-cover"
+        "z-calendar z-tabel z-anunturi"
+        "z-utilizatori z-tabel z-anunturi"
+        "z-utilizatori z-statistici z-info"
+        "z-viziune z-scopul z-produsele-noastre"
+        "z-intrebari z-autohton z-autohton"
+    ;
+    gap: 20px 10px;
+}
+
+.taburi-iframe {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+    text-align: center;
+}
+
+#cover {
+    grid-area: z-cover;
+    object-fit: fill;
+    width: 100%;
+    max-height: 100%;
+
+}
+
+#calendar {
+    grid-area: z-calendar
+}
+
+#tabel {
+    grid-area: z-tabel;
+}
+
+#anunturi {
+    grid-area: z-anunturi;
+}
+
+#utilizatori {
+    grid-area: z-utilizatori;
+}
+
+#statistici {
+    grid-area: z-statistici;
+}
+
+#info {
+    grid-area: z-info;
+}
+
+#viziune {
+    grid-area: z-viziune;
+}
+
+#produsele-noastre {
+    grid-area: z-produsele-noastre;
+}
+
+#intrebari {
+    grid-area: z-intrebari;
+}
+
+#autohton {
+    grid-area: z-autohton;
+    color: var(--culoare-autohton-scris);
+}
+
+#scopul {
+    grid-area: z-scopul;
+}
+
+.autohton-font{
+    color: var(--culoare-autohton-fundal);
+    font-weight: bold;
+}
+
+.autohton-culoare{
+    color: var(--culoare-autohton-fundal);
+}
+
+body {
+    color: var(--culoare-scris);
+}
+
+.butoane-iframe {
+    background-color: var(--culoare-autohton-scris);
+    color: var(--culoare-autohton-fundal);
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    padding: 2px 7px;
+    border-radius: 6px;
+    transition-duration: 0.3s;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.butoane-iframe:hover {
+    background-color: var(--culoare-autohton-fundal);
+    color: var(--culoare-autohton-scris);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color: var(--culoare-scris);
+    font-family: 'Bebas Neue', cursive;
+}
+
+#buton-sus {
+    position: fixed;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    border: 5px solid var(--culoare-scris);
+    color: var(--culoare-scris);
+    padding: 2px;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    opacity: 50%;
+    transition-duration: 0.7s;
+    text-align: center;
+}
+
+#buton-sus:hover {
+    opacity: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+#buton-sus:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+#buton-sus .tooltiptext {
+    vertical-align: text-bottom;
+    top: -50px;
+    right: 10%;
+    visibility: hidden;
+    width: 100px;
+    height: 20px;
+    background-color: var(--culoare-scris);
+    color: var(--culoare-fundal-site);
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 120%;
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+
+.continut-tabel{
+    caption-side:bottom;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
+}
+.continut-tabel thead tr{
+    background-color: var(--culoare-scris);
+    color: var(--culoare-fundal-site);
+    text-align: left;
+    font-weight: bold;
+    
+}
+
+.continut-tabel th,
+.continut-tabel td{
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+.continut-tabel tbody tr{
+    border-bottom: 1px solid var(--culoare-autohton-scris);
+}
+
+.continut-tabel tbody tr:nth-of-type(even){
+    background-color: var(--culoare-tabel-par);
+}
+
+.continut-tabel tbody tr:last-of-type{
+    border-bottom: 5px solid var(--culoare-scris);
+}
+
+#tabel tr:hover{
+    color: var(--culoare-tabel-par);
+    background-color: var(--culoare-scris);
+}
