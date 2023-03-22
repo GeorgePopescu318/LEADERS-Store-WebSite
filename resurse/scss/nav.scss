@@ -44,13 +44,18 @@ ul.meniu {
     box-sizing: border-box;
     list-style-type: none;
     transition: opacity 1s linear;}
+    li:hover{
+        box-shadow: inset 0 0 20px 0 rgb(255, 255, 255);
+    }
     >li{
         flex-grow: 0;
         flex-shrink: 0;
         flex-basis: var(--latime-buton);
     }
     &:hover{
-        background-color: var(--culoare-meniu);
+     /*   background-color: var(--culoare-meniu);*/
+        background-color: black;
+
         overflow: visible;
     }
 }
@@ -75,8 +80,6 @@ ul.meniu li a {
     font-weight: bold;
     line-height: var(--inaltime-meniu);
 }
-
-ul.meniu li
 
 ul.meniu>li:nth-child(even){
     background-color: var(--culoare-meniu);
