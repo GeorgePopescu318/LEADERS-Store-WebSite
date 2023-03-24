@@ -19,6 +19,7 @@ nav {
     height: var(--inaltime-meniu);
     width: 100%;
     position: sticky;
+    padding-right: 0;
     top: 0;
     width: 100wv;
     margin-left: calc(-1*var(--spatiere-pagina));
@@ -29,7 +30,6 @@ nav {
 ul.meniu {
     display: flex;
     padding-left: 0;
-    
 }
 
 ul.meniu li:hover ul{

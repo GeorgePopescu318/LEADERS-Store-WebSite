@@ -1,233 +1,118 @@
-
-#watermark, #absolut{
-    display: block;
-}
-
-@media print {
-    * { background: transparent !important; color: #444 !important; text-shadow: none; }
-
-	#absolut{
-		position: absolute;
-		display: inline-block;
-		top:100%;
-		width:20px;
-		height:20px;
-		right:0;
-		overflow: visible;
+@media print
+{
+	.hamburger-menu, .meniu{
+		display:none;
 	}
-    
-	#absolut::after{
-		content:"Element poziționat absolut pe a doua pagină.Pentru a vedea stilul de printare apăsați Ctrl+P.";
-		position: absolute;
-		font-size:8px;
+	
+	body{
+		color:black;
+	}
+	
+	.banner{
+		position:absolute;
+		display:inline-block;
+		top:0;
 		right:0;
+		width:50%;
 		border:5px double black;
-		width:200px;
-		height:35px;
-		display: inline-block;
+		
 	}
-
-    #grid-pagina {
-        display: block;
-        text-decoration: none;
+	
+	img,iframe,.button,.buttontop{
+		display:none;
+	}
+	header,footer
+	{
+		border:none;
+	}
+    footer{
+        page-break-before: always;
     }
-
+	a{
+		text-decoration:none;
+		color:black;
+	}
+	
+	.ullista div{
+		display:none;
+	}
+	
 	h1{
-		page-break-after: always;
 		margin-top: 50%;
 		text-align:center;
 		margin-left:1cm;
 	}
+	
 
-    a:hover, a:visited, a:link, a:active {
-        text-decoration: none;
-    }
-
-    footer {
-        page-break-before: always;
-    }
-
-    .ifr {
-        display: none;
-    }
-
-    figure {
-        display: none;
-    }
-
+	ul.meniu,ul.meniu ul
+	{
+		display:block;
+		border:none;
+		list-style-type: none;
+	}
+	
+	nav
+	{
+		page-break-after:always;
+	}
+	#grid-pagina{
+		font-size: 10px;
+		box-sizing:border-box;
+		page-break-before:always;
+		background-color: white;
+		display:block;
+	}
+	
 	html, body {
         width: 210mm;
-        /* height: 297mm; */
-        /*height: 282mm;*/
 		overflow:visible !important;
 	}
-
+	
 	#grid-pagina div:nth-child(5){
+		
 		page-break-before:always;
 	}
 	
+    #buton-sus{
+        display: none;
+    }
+
 	#watermark
 	{
 		display: block;
+		width:60%;
+		height:10%;
 		position: fixed;
-		bottom:0;
-		color:rgba(0,0,0,0.4);
-        opacity: 0.3;
-		right:0;
-        text-align: center;
+		top:45%;
+		right:20%;
+		color:rgba(black,1);
+		opacity:1;
+		
 	}
-	#watermark::after{		
-        padding:5px;
-        width: 60%;
-        height: 10%;
+	#watermark::after{
+		opacity:0.3;
 		display: block;
 		background: white;
-        border:2px solid black;
-		border-top-left-radius:10px;
-		border-bottom-left-radius:10px;
-        border-top-right-radius:10px;
-		border-bottom-right-radius:10px;
-		content:"Popescu Andrei-George ";
+		content:'Popescu \A Andrei-George';
+		white-space: pre-wrap;
+		text-align:center;
 	}
+}
 
-    #link-top {
-        display: none;
-    }
-
-	#end{
-		page-break-before: always;
+@page {
+		size: A4 portrait;
+		margin-bottom:2cm;
+		margin-top:2cm;
+		counter-increment: page;
+			
 	}
+	@page:left{
 
-    #detaliiAutor {
-        margin-bottom: 0px;
-    }
-    
-    #deVanzare {
-        margin-top: 0px;
-    }
-    
-    #calendar {
-        margin-top: 0px;
-        margin-right: 0px;
-    }
-    
-    #tabel {
-        margin-top: 0px;
-        margin-left: 0px;
-    }
-    
-    #anunturi {
-        margin-top: 0px;
-        margin-left: 0px;
-    }
-    
-    #listaUtilizatori {
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-bottom: 0px;
-    }
-    
-    #dateUtilizator {
-        margin-top: 0px;
-        margin-left: 0px;
-        margin-bottom: 0px;
-    }
-    
-    #comanda {
-        margin-top: 0px;
-        margin-left: 0px;
-        margin-bottom: 0px;
-    }
-
-    #footer{
-		page-break-before: always;
-    }
-
-    #linkuri p a{
-        color: black;
-        font-weight: 100;
-    }
-
-    #banner{
-        position: absolute;
-		display: block;
-        top: 1110px;
-		text-align: center;
-        left: 200px;
-        width: 70vw;
-        border: 2px solid black;
-    }
-    nav ul.menu li{
-		background-color: transparent;
-		all: unset;
-    }
-    nav{
-		background-color: transparent;
-        all: unset;
-        page-break-after: always;
-    }
-	nav ul.menu li a, nav ul.menu li div{
-		color: black;
+		margin-left:2cm;
+		margin-right:1cm;
 	}
-    ul.menu{
-		background-color: transparent;
-        all: unset;
-        page-break-after: always;
-    }
-	nav .fa-solid{
-		display: none;
+	@page:right{
+
+		margin-right:2cm;
+		margin-left:1cm;
 	}
-	nav ul.menu li{
-		list-style-type: circle;
-	}
-
-    a:hover, a:visited, a:link, a:active {
-        text-decoration: none;
-    }
-
-    footer {
-        page-break-before: always;
-    }
-
-    .ifr {
-        display: none;
-    }
-
-    figure {
-        display: none;
-    }
-
-    #grid-pagina{
-		font-size: 10px;
-		/* box-sizing:border-box; */
-		page-break-before:always;
-		background-color: white;
-		/* grid-template-rows: calc(100vh - 10px) 100vh 100vh 100vh; */
-		display:block;
-	}
-
-	html, body {
-        width: 210mm;
-        /* height: 297mm; */
-        /*height: 282mm;*/
-		overflow:visible !important;
-	}
-
-    @page {
-        size: A4 portrait;
-        margin-bottom:2cm;
-        margin-top:2cm;
-        counter-increment: page;
-            
-    }
-    
-    @page:left{
-        margin-left:2cm;
-        margin-right:1cm;
-    }
-    
-    @page:right{
-        margin-right:2cm;
-        margin-left:1cm;
-    }
-}   
