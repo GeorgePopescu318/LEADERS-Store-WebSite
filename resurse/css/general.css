@@ -386,3 +386,28 @@ h6{
     color: var(--culoare-tabel-par);
     background-color: var(--culoare-scris);
 }
+
+a:not(.autohton-font,.meniu,.butoane-iframe,.meniu-principal,.sub-meniu):link{
+    color: var(--culoare-scris);
+    text-decoration:none;
+    font-weight: bolder;
+}
+
+a:not(.meniu,.butoane-iframe,.meniu-principal,.sub-meniu):visited{
+    color: var(--culoare-meniu);
+    text-decoration:dotted;
+    font-weight: lighter;
+}
+
+a:not(.meniu,.butoane-iframe,.meniu-principal,.sub-meniu)[href^="http"]::before {
+    content: "⮳";
+    font-size: 150%;
+    color: var(--culoare-scris);
+  }
+  
+  a[href^="http"]:hover::before {
+    color: var(--culoare-autohton-fundal);
+  }
+
+
+    

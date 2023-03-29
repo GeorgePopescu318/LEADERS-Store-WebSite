@@ -68,7 +68,6 @@ ul.meniu li a {
     color: var(--culoare-text-meniu);
     text-decoration: none;
     font-weight: bold;
-    vertical-align: middle;
     text-align: center;
     line-height: var(--inaltime-meniu);
 }
@@ -110,7 +109,9 @@ ul.meniu>li:nth-child(odd){
     margin: 5px;
   }
   
-
+.hamburger-menu{
+    display: none;
+}
 
 .sageata{
     position: relative;

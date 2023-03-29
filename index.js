@@ -1,6 +1,7 @@
 const e = require("express");
 const express = require("express");
 const fs=require("fs");
+const path=require('path');
 
 obGlobal={
     obErori:null,
@@ -9,10 +10,29 @@ obGlobal={
 
 app= express();
 console.log("Folder proiect", __dirname);
+console.log("Cale fisier", __filename);
+console.log("Director de lucru", process.cwd());
+
+vectorFoldere=["temp","temp1"];
+for(let folder of vectorFoldere){
+    //let caleFolder = __dirname+"/"+folder;
+    let caleFolder = path.join(__dirname,folder);
+    if (!fs.existsSync(caleFolder)){
+        fs.mkdirSync(caleFolder)
+    }
+}
 
 app.set("view engine","ejs");
 
 app.use("/resurse",express.static(__dirname+"/resurse"))
+
+app.use(/^\/resurse(\/[a-zA-Z0-9]*)*$/,function(req,res){
+    afiseazaEroare(res,403);
+});
+
+app.get("/favicon.ico",function(req,res){
+    res.sendFile(__dirname+"/resurse/imagini/favicon/favicon.ico");
+});
 
 app.get("/ceva", function(req, res){
     res.send("altceva");
@@ -22,13 +42,20 @@ app.get(["/index","/","/home"], function(req, res){
     res.render("pagini/index",{ip: req.ip, a: 10, b: 20});
 })
 
+// ^\w+\.ejs$
+app.get("/*.ejs",function(req,res){
+    afiseazaEroare(res,400);
+});
+
 app.get("/*",function(req,res){
+    try{
     console.log(req.url);
     res.render("pagini"+req.url, function(err, rezRandare){
         if (err) {
             console.log(err);
             if (err.message.startsWith("Failed to lookup view")) {
-                afiseazaEroare(res,404);
+                //afiseazaEroare(res,{_identificator:404,_titlu:"ceva"});
+                afiseazaEroare(res,404,"ceva");
             }
             else{
                 afiseazaEroare(res);
@@ -37,7 +64,16 @@ app.get("/*",function(req,res){
             res.send(rezRandare);
         }
 
-    });
+    });}
+    catch(err){
+        if (err.message.startsWith("Cannot find module")) {
+            //afiseazaEroare(res,{_identificator:404,_titlu:"ceva"});
+            afiseazaEroare(res,404,"Eroare");
+        }
+        else{
+            afiseazaEroare(res);
+        }
+    }
 })
 
 function initializeazaErori(){
@@ -50,22 +86,25 @@ function initializeazaErori(){
     }
 }
 
-function afiseazaEroare(res,_identificator,_titlu,_text,_imagine){
+initializeazaErori();
+
+function afiseazaEroare(res,_identificator,_titlu="titlu default",_text,_imagine){
     let vErori= obGlobal.obErori.info_erori;
     let eroare = vErori.find( function(elem){return elem.identificator==_identificator});
     if (eroare) {
-        let titlu1= _titlu || eroare.titlu;
+        let titlu1= _titlu== "titlu default" ? (_titlu || eroare.titlu): _titlu;
         let text1= _text || eroare.text;
         let imagine1= _imagine || eroare.imagine;
         if (eroare.status) {
-            res.render(eroare.identificator).render({titlu:titlu1,text:text1,imagine:imagine1});
+            console.log(eroare.identificator);
+            res.status(eroare.identificator).render("pagini/eroare",{titlu:titlu1,text:text1,imagine:imagine1});
         }
         else{
         res.render("pagini/eroare",{titlu:titlu1,text:text1,imagine:imagine1});
         }
     }else{
         var errDef=obGlobal.obErori.eroare_default;
-        res.render("pagini/eroare",{titlu:errDef.titlu,text:errDef.text,imagine:errDef.imagine});
+        res.render("pagini/eroare",{titlu:errDef.titlu,text:errDef.text,imagine:obGlobal.obErori.cale_baza+"/"+errDef.imagine});
     }
 
 }
