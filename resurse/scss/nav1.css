@@ -44,16 +44,20 @@ ul.meniu li {
   list-style-type: none;
   transition: opacity 1s linear;
 }
+
 ul.meniu li:hover {
   box-shadow: inset 0 0 20px 0 rgb(255, 255, 255);
 }
+
 ul.meniu > li {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: var(--latime-buton);
 }
+
 ul.meniu:hover {
-     background-color: var(--culoare-meniu);
+  /*   background-color: var(--culoare-meniu);*/
+  background-color: black;
   overflow: visible;
 }
 
@@ -88,5 +92,3 @@ ul.meniu > li:nth-child(odd) {
 #acasa-mediu {
   display: none;
 }
-
-/*# sourceMappingURL=nav1.css.map */

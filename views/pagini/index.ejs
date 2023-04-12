@@ -5,8 +5,8 @@
     <title>
         LEADERS Store
     </title>
-    
-    
+
+
     <meta name="keywords" content="LEADERS, merch, tricou, hanroc, brățară, fundație, merch, tricou LEADERS, LEADING THE PROGRESS, brățări LEADERS,
      tricou EXPLORE, tricou EXPERIENCE, tricou CHALLENGE">
     <meta name="description"
@@ -16,241 +16,265 @@
 
 <body>
     <%- include("../fragmente/header.ejs") %>
-    <main id="grid-pagina">
-        <section id="cover">
-            <picture>
-                <img src="./resurse/imagini/explore_cover.png" title="Explore yourself" width="100%">
-            </picture>
-        </section>
-        <section id="calendar">
-            <p>calendar</p>
-        </section>
-        <section id="anunturi">
-            <p>anunturi Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquam magni nobis minus dolore
-                placeat aspernatur voluptatem in mollitia, quaerat facere ipsum, ullam, quasi beatae maxime odit
-                dolores! Accusamus, numquam.</p>
-        </section>
-        <section id="utilizatori">
-            <p>Utilizatori online</p>
-        </section>
-        <section id="tabel">
-            <h3>
-                Cele mai vândute produse
-            </h3>
-            <div class="div-tabel">
-                <table class="continut-tabel">
-                    <thead>
-                        <tr>
-                            <th>
-                                Nume produs
-                            </th>
-                            <th>
-                                Material
-                            </th>
-                            <th>
-                                Produse vândute
-                            </th>
-                            <th>
-                                Preț
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>
-                                Tricou LEADERS
-                            </th>
-                            <th rowspan="2">
-                                Bumbac
-                            </th>
-                            <th>
-                                1000
-                            </th>
-                            <th>
-                                100 lei
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Hanorac LEADERS
-                            </th>
-                            <th>
-                                750
-                            </th>
-                            <th>
-                                200 lei
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Pin LEADERS
-                            </th>
-                            <th>
-                                Metal
-                            </th>
-                            <th>
-                                500
-                            </th>
-                            <th>
-                                25 lei
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Cană
-                            </th>
-                            <th>
-                                Ceramică
-                            </th>
-                            <th>
-                                250
-                            </th>
-                            <th>
-                                75 lei
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Brățără
-                            </th>
-                            <th>
-                                Cauciuc
-                            </th>
-                            <th>
-                                1000
-                            </th>
-                            <th>
-                                10 lei
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                Sticker
-                            </th>
-                            <th>
-                                Plastic
-                            </th>
-                            <th>
-                                5000
-                            </th>
-                            <th>
-                                3 lei
-                            </th>
-                        </tr>
-                    </tbody>
-                        <tfoot>
-                    </tfoot>
-                    <caption>
-                        Toate datele sunt din anul 2022
-                    </caption>
-                </table>
-            </div>
-        </section>
-        <section id="info">
-            <p>Info despre site si server</p>
-        </section>
-        <section id="statistici">
-            <p>
-                Ip: <%- locals.ip %> 
-            </p>
-            <p>
-                Suma: <%- locals.a+locals.b %>
-            </p>
-        </section>
-        <section id="viziune">
-            <h3>
-                Orice lucru bine făcut are în spate o VIZIUNE
-            </h3>
-            <p>
-                <b>Fundația</b> <b>LEADERS</b> este o orgsanizație care formează și susține oamenii cu valori și
-                principii să devină liderii responsabili care fac România puternică la toate nivelurile. Programe și
-                experiențe educaționale adaptate realității din România, create pe baza unui model de leadership
-                autohton.
-            </p><i class="fa fa-users"></i>
-            <a href="https://leaders.ro/" target="_blank">Vizitează site-ul LEADERS </a><i class="fa fa-users"></i>
-            <figure>
+        <main id="grid-pagina">
+            <section id="cover">
                 <picture>
-                    <source media="(max-width: 720px)" srcset="./resurse/imagini/LDRS_poza_phone.png">
-                    <source media="(max-width: 1024px)" srcset="./resurse/imagini/LDRS_poza_50.png">
-                    <img src="./resurse/imagini/LDRS_poza.png" title="Fundația LEADERS" width="100%" height="100%">
+                    <img src="./resurse/imagini/explore_cover.png" title="Explore yourself" width="100%">
                 </picture>
-                <figcaption><q>Un drum lin este
-                        un drum cu <b>MISIUNE</b></q></figcaption>
-            </figure>
-            <p>Iar <dfn>misiunea</dfn> <b>LEADERS</b> este să declanșeze potențialul tinerilor și să formeze lideri
-                vizionari, responsabili și curajoși, prin programe de leadership practice, croite pe fiecare nivel de
-                dezvoltare.</p>
-        </section>
-        <section id="scopul">
-            <h3>
-                Scopul Magazinului
-            </h3>
-            <p>
-                Din banii opținuți în urma vânzărilor <b>merch</b>-ului LEADERS vom putea să le oferim inspirația
-                cât mai multor tineri. <br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quos nostrum
-                facilis, alias cumque minus autem magnam ut fugiat maiores molestias nesciunt ad ducimus. Tempora
-                aliquid dolores modi temporibus in!
-            </p>
-        </section>
-        <section id="produsele-noastre">
-            <h2>
-                Produsele noastre
-            </h2>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Hanorace</b></li>
-                <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Tricouri</b></li>
-                <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Căni</b></li>
-                <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Brățări</b></li>
-                <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Pinuri</b></li>
-                <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Sticker</b></li>
-            </ul>
-        </section>
-        <section id="autohton">
-            <h2 class="autohton-culoare">
-                Autohton
-            </h2>
-            <p>
-                Saptămânal pe pagina de YouTube a Fundației <b
-                    class="autohton-font">LEADERS</b> puteți urmări podcastul plin de inspiratie
-                <span class="autohton-font">Autohton</span>.
-            </p><br>
-            <div class="taburi-iframe">
-                <a href="https://www.youtube.com/embed/7oci96dN0BM" target="ifr-video" class="butoane-iframe">Episod
-                    pilot</a>
-                <a href="https://www.youtube.com/embed/0fn2jH9wJAQ" target="ifr-video" class="butoane-iframe">Episodul
-                    1</a><br />
-
-                <iframe name="ifr-video" width="400px" height="300px" src="https://www.youtube.com/embed/7oci96dN0BM"
-                    frameborder="0" scale="auto"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-            <p>Dacă dorești să afli mai multe despre leadership:</p>
-            <a href="https://capability-acces.eu/wp-content/uploads/2019/06/LEADERSHIP-course-in-RO.pdf" download
-            class="autohton-font">Descarca PDF</a>
-        </section>
-        <section id="intrebari">
-            <h3>
-                Întrebări frecvente
-            </h3>
-            <details>
-                <summary>Care este modul de plata?</summary>
-                <p>Plata se poate efectua atat ramburs cât și plată cu cardul.</p>
-            </details>
-            <details>
-                <summary>Din ce sunt confecționate produsele?</summary>
-                <p>Tote produsele noastre sunt confecționate din materiale sustenabile și friendly cu mediul.</p>
-            </details>
-            <details>
-                <summary>Livrați în afara Romaniei?</summary>
+            </section>
+            <section id="calendar">
+                <p>calendar</p>
+                <div id="grid-galerie">
+                    <% for (let imag of locals.imagini) {
+                        d=new Date()
+                        var v_luni=["ianuarie", "februarie", "martie","aprilie","mai","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"]
+                        if(imag.luni && imag.luni.includes(v_luni[d.getMonth()])) {
+                        %>
+                       
+                            <figure>
+                                <picture>
+                                    <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
+                                    <img src="<%- imag.fisier %>" alt="imasine">
+                                </picture>
+                                <figcaption><%- imag.descriere %></figcaption>
+                            </figure>
+               
+               
+                            <% }  %>
+                    <% }  %>
+                </div>
+            </section>
+            <section id="anunturi">
+                <button class="btn btn-primary">ceva</button>
+                <p>anunturi Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquam magni nobis minus
+                    dolore
+                    placeat aspernatur voluptatem in mollitia, quaerat facere ipsum, ullam, quasi beatae maxime odit
+                    dolores! Accusamus, numquam.</p>
+            </section>
+            <section id="utilizatori">
+                <p>Utilizatori online</p>
+            </section>
+            <section id="tabel">
+                <h3>
+                    Cele mai vândute produse
+                </h3>
+                <div class="div-tabel">
+                    <table class="continut-tabel">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nume produs
+                                </th>
+                                <th>
+                                    Material
+                                </th>
+                                <th>
+                                    Produse vândute
+                                </th>
+                                <th>
+                                    Preț
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    Tricou LEADERS
+                                </th>
+                                <th rowspan="2">
+                                    Bumbac
+                                </th>
+                                <th>
+                                    1000
+                                </th>
+                                <th>
+                                    100 lei
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Hanorac LEADERS
+                                </th>
+                                <th>
+                                    750
+                                </th>
+                                <th>
+                                    200 lei
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Pin LEADERS
+                                </th>
+                                <th>
+                                    Metal
+                                </th>
+                                <th>
+                                    500
+                                </th>
+                                <th>
+                                    25 lei
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Cană
+                                </th>
+                                <th>
+                                    Ceramică
+                                </th>
+                                <th>
+                                    250
+                                </th>
+                                <th>
+                                    75 lei
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Brățără
+                                </th>
+                                <th>
+                                    Cauciuc
+                                </th>
+                                <th>
+                                    1000
+                                </th>
+                                <th>
+                                    10 lei
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Sticker
+                                </th>
+                                <th>
+                                    Plastic
+                                </th>
+                                <th>
+                                    5000
+                                </th>
+                                <th>
+                                    3 lei
+                                </th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                        <caption>
+                            Toate datele sunt din anul 2022
+                        </caption>
+                    </table>
+                </div>
+            </section>
+            <section id="info">
+                <p>Info despre site si server</p>
+            </section>
+            <section id="statistici">
                 <p>
-                    Da, costul transportului va crește dar noi suntem dispuși.
+                    Ip: <%- locals.ip %>
                 </p>
-            </details>
-        </section>
-    </main>
-    <%- include("../fragmente/footer.ejs") %>
+                <p>
+                    Suma: <%- locals.a+locals.b %>
+                </p>
+            </section>
+            <section id="viziune">
+                <h3>
+                    Orice lucru bine făcut are în spate o VIZIUNE
+                </h3>
+                <p>
+                    <b>Fundația</b> <b>LEADERS</b> este o orgsanizație care formează și susține oamenii cu valori și
+                    principii să devină liderii responsabili care fac România puternică la toate nivelurile. Programe și
+                    experiențe educaționale adaptate realității din România, create pe baza unui model de leadership
+                    autohton.
+                </p><i class="fa fa-users"></i>
+                <a href="https://leaders.ro/" target="_blank">Vizitează site-ul LEADERS </a><i class="fa fa-users"></i>
+                <figure>
+                    <picture>
+                        <source media="(max-width: 720px)" srcset="./resurse/imagini/LDRS_poza_phone.png">
+                        <source media="(max-width: 1024px)" srcset="./resurse/imagini/LDRS_poza_50.png">
+                        <img src="./resurse/imagini/LDRS_poza.png" title="Fundația LEADERS" width="100%" height="100%">
+                    </picture>
+                    <figcaption><q>Un drum lin este
+                            un drum cu <b>MISIUNE</b></q></figcaption>
+                </figure>
+                <hr class="hr-new5">
+                <p>Iar <dfn>misiunea</dfn> <b>LEADERS</b> este să declanșeze potențialul tinerilor și să formeze lideri
+                    vizionari, responsabili și curajoși, prin programe de leadership practice, croite pe fiecare nivel
+                    de
+                    dezvoltare.</p>
+            </section>
+            <section id="scopul">
+                <h3>
+                    Scopul Magazinului
+                </h3>
+                <p>
+                    Din banii opținuți în urma vânzărilor <b>merch</b>-ului LEADERS vom putea să le oferim inspirația
+                    cât mai multor tineri. <br>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quos nostrum
+                    facilis, alias cumque minus autem magnam ut fugiat maiores molestias nesciunt ad ducimus. Tempora
+                    aliquid dolores modi temporibus in!
+                </p>
+            </section>
+            <section id="produsele-noastre">
+                <h2>
+                    Produsele noastre
+                </h2>
+                <ul class="fa-ul">
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Hanorace</b></li>
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Tricouri</b></li>
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Căni</b></li>
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Brățări</b></li>
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Pinuri</b></li>
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Sticker</b></li>
+                </ul>
+            </section>
+            <section id="autohton">
+                <h2 class="autohton-culoare">
+                    Autohton
+                </h2>
+                <p>
+                    Saptămânal pe pagina de YouTube a Fundației <b class="autohton-font">LEADERS</b> puteți urmări
+                    podcastul plin de inspiratie
+                    <span class="autohton-font">Autohton</span>.
+                </p><br>
+                <div class="taburi-iframe">
+                    <a href="https://www.youtube.com/embed/7oci96dN0BM" target="ifr-video" class="butoane-iframe">Episod
+                        pilot</a>
+                    <a href="https://www.youtube.com/embed/0fn2jH9wJAQ" target="ifr-video"
+                        class="butoane-iframe">Episodul
+                        1</a><br />
+
+                    <iframe name="ifr-video" width="400px" height="300px"
+                        src="https://www.youtube.com/embed/7oci96dN0BM" frameborder="0" scale="auto"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <p>Dacă dorești să afli mai multe despre leadership:</p>
+                <a href="https://capability-acces.eu/wp-content/uploads/2019/06/LEADERSHIP-course-in-RO.pdf" download
+                    class="autohton-font">Descarca PDF</a>
+            </section>
+            <section id="intrebari">
+                <h3>
+                    Întrebări frecvente
+                </h3>
+                <details>
+                    <summary>Care este modul de plata?</summary>
+                    <p>Plata se poate efectua atat ramburs cât și plată cu cardul.</p>
+                </details>
+                <details>
+                    <summary>Din ce sunt confecționate produsele?</summary>
+                    <p>Tote produsele noastre sunt confecționate din materiale sustenabile și friendly cu mediul.</p>
+                </details>
+                <details>
+                    <summary>Livrați în afara Romaniei?</summary>
+                    <p>
+                        Da, costul transportului va crește dar noi suntem dispuși.
+                    </p>
+                </details>
+            </section>
+        </main>
+        <%- include("../fragmente/footer.ejs") %>
 </body>
 
 </html>

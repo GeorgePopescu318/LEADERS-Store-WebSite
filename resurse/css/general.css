@@ -255,12 +255,12 @@ h3 {
     grid-area: z-scopul;
 }
 
-.autohton-font{
+.autohton-font {
     color: var(--culoare-autohton-fundal);
     font-weight: bold;
 }
 
-.autohton-culoare{
+.autohton-culoare {
     color: var(--culoare-autohton-fundal);
 }
 
@@ -290,7 +290,7 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
     color: var(--culoare-scris);
     font-family: 'Bebas Neue', cursive;
 }
@@ -346,8 +346,8 @@ h6{
 
 
 
-.continut-tabel{
-    caption-side:bottom;
+.continut-tabel {
+    caption-side: bottom;
     margin: 25px 0;
     font-size: 0.9em;
     border-spacing: 1px;
@@ -356,58 +356,62 @@ h6{
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
 }
-.continut-tabel thead tr{
+
+.continut-tabel thead tr {
     background-color: var(--culoare-scris);
     color: var(--culoare-fundal-site);
     text-align: left;
     font-weight: bold;
-    
+
 }
 
 .continut-tabel th,
-.continut-tabel td{
+.continut-tabel td {
     padding: 12px 15px;
     vertical-align: middle;
 }
 
-.continut-tabel tbody tr{
+.continut-tabel tbody tr {
     border-bottom: 1px solid var(--culoare-autohton-scris);
 }
 
-.continut-tabel tbody tr:nth-of-type(even){
+.continut-tabel tbody tr:nth-of-type(even) {
     background-color: var(--culoare-tabel-par);
 }
 
-.continut-tabel tbody tr:last-of-type{
+.continut-tabel tbody tr:last-of-type {
     border-bottom: 5px solid var(--culoare-scris);
 }
 
-#tabel tr:hover{
+#tabel tr:hover {
     color: var(--culoare-tabel-par);
     background-color: var(--culoare-scris);
 }
 
-a:not(.autohton-font,.meniu,.butoane-iframe,.meniu-principal,.sub-meniu):link{
+a:not(.autohton-font, .meniu, .butoane-iframe, .meniu-principal, .sub-meniu):link {
     color: var(--culoare-scris);
-    text-decoration:none;
+    text-decoration: none;
     font-weight: bolder;
 }
 
-a:not(.meniu,.butoane-iframe,.meniu-principal,.sub-meniu):visited{
+a:not(.meniu, .butoane-iframe, .meniu-principal, .sub-meniu):visited {
     color: var(--culoare-meniu);
-    text-decoration:dotted;
+    text-decoration: dotted;
     font-weight: lighter;
 }
 
-a:not(.meniu,.butoane-iframe,.meniu-principal,.sub-meniu)[href^="http"]::before {
+a:not(.meniu, .butoane-iframe, .meniu-principal, .sub-meniu)[href^="http"]::before {
     content: "⮳";
     font-size: 150%;
     color: var(--culoare-scris);
-  }
-  
-  a[href^="http"]:hover::before {
+}
+
+a[href^="http"]:hover::before {
     color: var(--culoare-autohton-fundal);
-  }
+}
 
-
-    
+.hr-new5 {
+    background: linear-gradient(50deg, var(--culoare-scris) 10%,
+     var(--culoare-scris) 10%, var(--culoare-fundal-site) 10%, var(--culoare-scris) 90%);
+    height: 10px;
+}
