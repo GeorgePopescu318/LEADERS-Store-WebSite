@@ -388,7 +388,7 @@ h6 {
     background-color: var(--culoare-scris);
 }
 
-a:not(.autohton-font, .meniu, .butoane-iframe, .meniu-principal, .sub-meniu):link {
+a:not(.autohton-font, .meniu, .butoane-iframe, .meniu-principal, .sub-meniu, li,ul.meniu li a):link {
     color: var(--culoare-scris);
     text-decoration: none;
     font-weight: bolder;
@@ -400,7 +400,7 @@ a:not(.meniu, .butoane-iframe, .meniu-principal, .sub-meniu):visited {
     font-weight: lighter;
 }
 
-a:not(.meniu, .butoane-iframe, .meniu-principal, .sub-meniu)[href^="http"]::before {
+a:not(.meniu, .butoane-iframe, .meniu-principal, .sub-meniu, ul.meniu li a)[href^="http"]::before {
     content: "⮳";
     font-size: 150%;
     color: var(--culoare-scris);

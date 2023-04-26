@@ -1,0 +1,91 @@
+#hamburger,
+#ch-meniu {
+  display: none;
+}
+
+body {
+  --inaltime-meniu: 50px;
+  --latime-buton: 150px;
+  --culoare-nav: var(--culoare-scris);
+}
+
+nav {
+  --culoare-text-meniu: white;
+  background-color: var(--culoare-nav);
+  height: var(--inaltime-meniu);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  width: 100wv;
+  margin-left: calc(-1 * var(--spatiere-pagina));
+  width: calc(100vw - 18px);
+  font-family: "Bebas Neue", cursive;
+}
+
+ul.meniu {
+  display: flex;
+  padding-left: 0;
+}
+
+ul.meniu li:hover ul {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+ul.meniu li {
+  width: var(--latime-buton);
+  height: var(--inaltime-meniu);
+  background-color: var(--culoare-scris);
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid black;
+  transition: background-color 0.2s linear;
+  box-sizing: border-box;
+  list-style-type: none;
+  transition: opacity 1s linear;
+}
+ul.meniu li:hover {
+  box-shadow: inset 0 0 20px 0 rgb(255, 255, 255);
+}
+ul.meniu > li {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: var(--latime-buton);
+}
+ul.meniu:hover {
+  /*   background-color: var(--culoare-meniu);*/
+  background-color: black;
+  overflow: visible;
+}
+
+ul.meniu ul {
+  padding-left: 0;
+  opacity: 0;
+  list-style-type: none;
+  transform: scale(0, 0);
+  transition: all is linear;
+  transform-origin: center top;
+}
+
+ul.meniu li div,
+ul.meniu li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: var(--culoare-text-meniu);
+  text-decoration: none;
+  font-weight: bold;
+  line-height: var(--inaltime-meniu);
+}
+
+ul.meniu > li:nth-child(even) {
+  background-color: var(--culoare-meniu);
+}
+
+ul.meniu > li:nth-child(odd) {
+  background-color: var(--culoare-nav);
+}
+
+#acasa-mediu {
+  display: none;
+}

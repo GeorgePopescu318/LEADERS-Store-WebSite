@@ -1,0 +1,45 @@
+<div id="grid-galerie">
+    <% let counter = 0; %>
+    <% for (let i = 0; i < locals.imagini.length; i++) {
+        const ora = new Date().getHours();
+        const imag = locals.imagini[i];
+        let perioada = "";
+        if ( ora <= "12:00:00" && ora > "05:00:00" ){
+             perioada = "dimineata";
+        }
+        else
+            if ( ora <= "20:00:00" && ora > "12:00:00" ){
+                 perioada = "zi";
+        }
+        else
+            if ( ora <= "05:00:00" && ora > "20:00:00" ){
+                 perioada = "noapte";
+        }
+        if( imag.timp.includes(perioada))
+            if ( counter % 3 != 2) {
+        %>
+        <figure>
+                    <picture>
+                        <source srcset="<%- imag.fisier_mic %>" media="(max-width:500px)" />
+                        <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
+                        <img src="<%- imag.fisier %>" alt="imagine">
+                    </picture>
+                    <figcaption><%- imag.descriere %></figcaption>
+                </figure>
+
+
+            <% }  
+            else{ %>
+                <div class="spacer"></div>
+                <figure>
+                    <picture>
+                        <source srcset="<%- imag.fisier_mic %>" media="(max-width:500px)" />
+                        <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
+                        <img src="<%- imag.fisier %>" alt="imagine">
+                    </picture>
+                    <figcaption><%- imag.descriere %></figcaption>
+                </figure>
+            <div class="spacer"></div>
+            <% } %>
+    <% }  %>
+</div>

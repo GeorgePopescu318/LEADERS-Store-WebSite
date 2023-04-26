@@ -24,25 +24,7 @@
             </section>
             <section id="calendar">
                 <p>calendar</p>
-                <div id="grid-galerie">
-                    <% for (let imag of locals.imagini) {
-                        d=new Date()
-                        var v_luni=["ianuarie", "februarie", "martie","aprilie","mai","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"]
-                        if(imag.luni && imag.luni.includes(v_luni[d.getMonth()])) {
-                        %>
-                       
-                            <figure>
-                                <picture>
-                                    <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
-                                    <img src="<%- imag.fisier %>" alt="imasine">
-                                </picture>
-                                <figcaption><%- imag.descriere %></figcaption>
-                            </figure>
-               
-               
-                            <% }  %>
-                    <% }  %>
-                </div>
+                <%- include("../fragmente/galerie-turis.ejs") %>
             </section>
             <section id="anunturi">
                 <button class="btn btn-primary">ceva</button>

@@ -14,6 +14,7 @@ body {
 }
 
 nav {
+    z-index: 10;
     --culoare-text-meniu: white;
     background-color: var(--culoare-nav);
     height: var(--inaltime-meniu);
@@ -41,6 +42,7 @@ ul.meniu li {
     width: var(--latime-buton);
     height: var(--inaltime-meniu);
     background-color: var(--culoare-scris);
+    color: var(--culoare-fundal-site);
     overflow: hidden;
     text-align: center;
     border: 1px solid black;
