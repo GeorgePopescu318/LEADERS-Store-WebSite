@@ -7,6 +7,17 @@ const sass = require('sass');
 const process = require("process");
 const ejs = require("ejs");
 const { Client } = require('pg');
+const AccesBD= require("./module_proprii/accesbd.js");
+ 
+AccesBD.getInstanta().select(
+    {tabel:"prajituri",
+    campuri:["nume", "pret", "calorii"],
+    conditiiAnd:["pret>7"]},
+    function (err, rez){
+        console.log(err);
+        console.log(rez);
+    }
+)
 
 var client = new Client({
     database: "proiect_web",

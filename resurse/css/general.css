@@ -154,6 +154,18 @@ body {
     --culoare-tabel-par: #f3f3f3;
 }
 
+body.dark {
+    --culoare-fundal-inchis: #C886FF;
+    --culoare-fundal-site: grey;
+    --culoare-scris: #002561;
+    --culoare-meniu: #295ca9;
+    --culoare-secundara-1: #055b5d;
+    --culoare-secundara-2: #00a1a9;
+    --culoare-autohton-fundal: #faad19;
+    --culoare-autohton-scris: #797f8a;
+    --culoare-tabel-par: #f3f3f3;
+}
+
 body {
     color: var(--culoare-scris);
     padding-left: var(--spatiere-pagina);
