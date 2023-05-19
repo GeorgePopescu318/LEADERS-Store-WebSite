@@ -1,6 +1,42 @@
-@use '../../node_modules/bootstrap/scss/bootstrap.scss' with
-(
-    $primary: red,
-    $secondary:purple,  
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with(
 
+    $primary: #D6B140,
+    $secondary: #C20F0C,
+
+    /*culorile de background pentru minim 2 teme la alegere pe care aplicați tema cromatică schimbată (customizată de voi)*/
+
+    $grid-breakpoints: (
+    xs: 0,
+    sm: 500px,
+    md: 1000px,
+    lg: 1100px,
+    ),
+    /*dimensiuni de ecran diferite pentru ecrane medii și mari*/
+
+
+    $border-radius:               .50rem,
+    $border-radius-sm:            .5rem,
+    $border-radius-lg:            .6rem,
+    $border-radius-pill:          65rem,
+
+    /*dimensiunea razelor de border*/
+
+    $font-family-base: "Gill Sans" sans-serif,
+    /*familia de font implicită*/
+    $success:       rgb(85, 187, 85), 
+    $info:          rgba(61, 61, 136, 0.657),
+    $warning:       #91a320,
+    $danger:        #95130c ,
+    $light:         #D6C4C3,
+    $dark:          black ,
+    $h1-font-size:                3.5rem,
+    $h2-font-size:                3rem,
+    $h3-font-size:                2.5rem,
+    $h4-font-size:                2rem,
+    $h5-font-size:                1rem
+
+    /*dimensiunea literelor  headingurilor (h1,h2 etc)*/
+
+
+    
 )

@@ -130,7 +130,7 @@ q:after {
 }
 
 table {
-    border-spacing: 2px;
+    border-spacing: 2px; 
 }
 
 html {
@@ -141,10 +141,13 @@ html {
 }
 
 body {
+    background-color: var(--culoare-fundal-site);
     --spatiere-pagina: 50px;
     --padding-sectiune: 15px;
     --culoare-fundal-inchis: #C886FF;
     --culoare-fundal-site: white;
+    --culoare-scris-1: #002561;
+    --culoare-scris-2: white;
     --culoare-scris: #002561;
     --culoare-meniu: #295ca9;
     --culoare-secundara-1: #055b5d;
@@ -156,9 +159,11 @@ body {
 
 body.dark {
     --culoare-fundal-inchis: #C886FF;
-    --culoare-fundal-site: grey;
-    --culoare-scris: #002561;
-    --culoare-meniu: #295ca9;
+    --culoare-fundal-site: #002561;
+    --culoare-scris-1: white;
+    --culoare-scris-2: #002561;
+    --culoare-scris: #295ca9;
+    --culoare-meniu: #002561;
     --culoare-secundara-1: #055b5d;
     --culoare-secundara-2: #00a1a9;
     --culoare-autohton-fundal: #faad19;
@@ -167,7 +172,7 @@ body.dark {
 }
 
 body {
-    color: var(--culoare-scris);
+    color: var(--culoare-scris-1);
     padding-left: var(--spatiere-pagina);
     padding-right: var(--spatiere-pagina);
     min-width: 450px;
@@ -303,8 +308,12 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--culoare-scris);
+    color: var(--culoare-scris-1);
     font-family: 'Bebas Neue', cursive;
+}
+
+p,summary,b,figcaption{
+    color: var(--culoare-scris-1);
 }
 
 #buton-sus {
@@ -362,11 +371,11 @@ h6 {
     caption-side: bottom;
     margin: 25px 0;
     font-size: 0.9em;
-    border-spacing: 1px;
     min-width: 400px;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
+    border-spacing: 2px 2px;
 }
 
 .continut-tabel thead tr {
@@ -401,13 +410,13 @@ h6 {
 }
 
 a:not(.autohton-font, .meniu, .butoane-iframe, .meniu-principal, .sub-meniu, li,ul.meniu li a):link {
-    color: var(--culoare-scris);
+    color: var(--culoare-scris-1);
     text-decoration: none;
     font-weight: bolder;
 }
 
-a:not(.meniu, .butoane-iframe, .meniu-principal, .sub-meniu):visited {
-    color: var(--culoare-meniu);
+a:not(.meniu, .butoane-iframe, .meniu-principal, .sub-meniu, ul.meniu li div, ul.meniu li a):visited {
+    color: var(--culoare-scris-1);
     text-decoration: dotted;
     font-weight: lighter;
 }
@@ -415,7 +424,7 @@ a:not(.meniu, .butoane-iframe, .meniu-principal, .sub-meniu):visited {
 a:not(.meniu, .butoane-iframe, .meniu-principal, .sub-meniu, ul.meniu li a)[href^="http"]::before {
     content: "⮳";
     font-size: 150%;
-    color: var(--culoare-scris);
+    color: var(--culoare-scris-1);
 }
 
 a[href^="http"]:hover::before {
