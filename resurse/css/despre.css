@@ -3,38 +3,42 @@
   background-image: url("http://localhost:8080/resurse/imagini/lume_multa.jpg");
   background-size: cover;
   width: 100%;
-  height: 500px;
+  height: 750px;
   filter: brightness(150%) grayscale(0);
   transition: all 1s linear;
-  z-index: -1;
 }
-#duotone:before, #duotone:after {
+#duotone:before {
   content: "";
   display: block;
-  visibility: visible;
+  visibility: hidden;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-}
-#duotone:before {
   float: left;
-  background-color: var(--culoare-autohton-fundal);
+  background-color: yellow;
   mix-blend-mode: darken;
   transform: scaleX(0);
   display: block;
   transform-origin: bottom left;
-  transition: transform 2s ease-in-out;
+  transition: transform 1s ease-in-out;
 }
 #duotone:after {
-  background-color: var(--culoare-scris);
+  content: "";
+  display: block;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: blue;
   mix-blend-mode: lighten;
   transform: scaleX(0);
-  z-index: -1;
   display: block;
   transform-origin: bottom right;
-  transition: transform 2s ease-in-out;
+  transition: transform 1s ease-in-out;
 }
 #duotone:hover::before {
   transform: scaleX(1);
@@ -64,27 +68,15 @@
   -webkit-mask-image: var(--gradient);
   mask-image: var(--gradient);
 }
-.units:hover {
+.units > :last-child:hover {
   animation: colorChange 5s infinite;
 }
 
 @keyframes colorChange {
-  from {
-    /* radial-gradient(farthest-corner at top right, ..) */
-    --gradient:repeating-radial-gradient(circle at bottom, transparent, white 4px), linear-gradient(transparent 1%, transparent, white 100%);
-    -webkit-mask-image: var(--gradient);
-    mask-image: var(--gradient);
+  0% {
+    background-position: 100% 50%;
   }
-  50% {
-    /* radial-gradient(farthest-corner at top center, ..) */
-    --gradient:repeating-radial-gradient(circle at middle, transparent, white 4px), linear-gradient(transparent 1%, transparent, white 100%);
-    -webkit-mask-image: var(--gradient);
-    mask-image: var(--gradient);
-  }
-  to {
-    /* radial-gradient(farthest-corner at top left, ..) */
-    --gradient:repeating-radial-gradient(circle at top, transparent, white 4px), linear-gradient(transparent 1%, transparent, white 100%);
-    -webkit-mask-image: var(--gradient);
-    mask-image: var(--gradient);
+  100% {
+    background-position: -33% 50%;
   }
 }

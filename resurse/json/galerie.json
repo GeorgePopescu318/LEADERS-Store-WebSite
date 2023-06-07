@@ -5,7 +5,7 @@
 			"cale_relativa":"briose-frisca.png",
 			"nume":"Brioșe",
 			"descriere":"Descriere default",
-			"timp":["dimineata","zi","noapte"]
+			"timp":["dimineata"]
 		},
 		{
 			"cale_relativa":"clatite.png",
@@ -17,12 +17,6 @@
 		{
 			"cale_relativa":"gogosi.png",
 			"nume":"Gogoși glazurate",
-			"descriere":"Descriere default",
-			"timp":["dimineata","zi","noapte"]
-		},
-		{
-			"cale_relativa":"tort-scortisoara.png",
-			"nume":"Tort cu scorțisoară",
 			"descriere":"Descriere default",
 			"timp":["dimineata","zi","noapte"]
 		},
@@ -39,10 +33,19 @@
 			"timp":["dimineata","zi","noapte"]
 		},
 		{
+			"cale_relativa":"posibil-amandina.jpg",
+			"nume":"Amandina",
+			"descriere":"Descriere default",
+			"timp":["dimineata","zi","noapte"]
+			
+		},
+		{
 			"cale_relativa":"tort-trandafiri.png",
 			"nume":"Tort special",
 			"descriere":"Descriere default",
 			"timp":["dimineata","zi","noapte"]
 		}
+
+
 	]
 }
