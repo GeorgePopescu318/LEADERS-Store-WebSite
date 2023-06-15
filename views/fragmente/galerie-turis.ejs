@@ -1,9 +1,7 @@
 <div id="galerie-statica-mare">
 <% let counter = 0;
 let perioada = "";
-      for (let imag of locals.imagini) {
-        const ora = new Date().getHours();
-            
+const ora = new Date().getHours();
             if (ora >= 5 && ora <= 12) {
                 perioada = "dimineata";
             } else if (ora > 12 && ora <= 20) {
@@ -11,6 +9,16 @@ let perioada = "";
             } else {
                 perioada = "noapte";
             }
+var array1 = locals.imagini.filter( arr => {
+  if (arr.timp.includes(perioada)){
+      return true;
+  }
+  return false;
+});
+var array = array1.slice(0,array1.length - (array1.length%3));
+      if (array.length > 5){
+      for (let imag of array) {
+       
             if (!(imag.timp.includes(perioada))) {
             continue;
         }
@@ -26,9 +34,9 @@ let perioada = "";
                     <picture>
                       <source srcset="<%- imag.fisier_mic %>" media="(max-width:500px)" />
                       <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
-                      <img src="<%- imag.fisier %>" alt="imagine">
+                      <img src="<%- imag.fisier %>" title="<%- imag.descriere %>"alt="imagine">
                     </picture>
-                    <figcaption><%- imag.nume %></figcaption>
+                    <figcaption><%- imag.nume %> </figcaption>
                   </figure>
                 </div>
              %>
@@ -38,6 +46,6 @@ let perioada = "";
                 %> </div> <%
               }
             
-      } %>
+      } }%>
 </div>
   

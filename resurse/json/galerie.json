@@ -2,47 +2,63 @@
 	"cale_galerie":"resurse/imagini/galerie",
 	"imagini": [
 		{
-			"cale_relativa":"briose-frisca.png",
-			"nume":"Brioșe",
-			"descriere":"Descriere default",
-			"timp":["dimineata"]
+			"cale_relativa":"bate-palma.jpg",
+			"nume":"Colaborare",
+			"descriere":"Spiritul de echipă este cheia pentru obținerea succesului.",
+			"timp":["dimineata","zi","noapte"]
 		},
 		{
-			"cale_relativa":"clatite.png",
-			"nume":"Clătite cu dulceață",
-			"descriere":"Descriere default",
+			"cale_relativa":"caiac-canoe.jpg",
+			"nume":"Perseverență",
+			"descriere":"Un lider puternic își motivează echipa prin exemplul personal.",
 			"timp":["dimineata","zi","noapte"]
 			
 		},
 		{
-			"cale_relativa":"gogosi.png",
-			"nume":"Gogoși glazurate",
-			"descriere":"Descriere default",
-			"timp":["dimineata","zi","noapte"]
-		},
-		{
-			"cale_relativa":"prajitura-ciocolata.png",
-			"nume":"Prăjitură cu ciocolată",
-			"descriere":"Descriere default",
-			"timp":["dimineata","zi","noapte"]
-		},
-		{
-			"cale_relativa":"tarta-afine.png",
-			"nume":"Tartă cu afine",
-			"descriere":"Descriere default",
-			"timp":["dimineata","zi","noapte"]
-		},
-		{
-			"cale_relativa":"posibil-amandina.jpg",
-			"nume":"Amandina",
-			"descriere":"Descriere default",
+			"cale_relativa":"winner.jpg",
+			"nume":"Pasiune",
+			"descriere":"Reușita este rezultatul muncii depuse cu pasiune și dedicare.",
 			"timp":["dimineata","zi","noapte"]
 			
 		},
 		{
-			"cale_relativa":"tort-trandafiri.png",
-			"nume":"Tort special",
-			"descriere":"Descriere default",
+			"cale_relativa":"caiet.jpg",
+			"nume":"Invațarea continuă",
+			"descriere":"Prin învățare, ne îmbogățim mintea și ne deschidem orizonturile.",
+			"timp":["dimineata","zi","noapte"]
+		},
+		{
+			"cale_relativa":"maini.jpg",
+			"nume":"Motivație",
+			"descriere":"Inspiră-te din obiectivele tale și transformă-le în realitate.",
+			"timp":["dimineata","zi","noapte"]
+		},
+		{
+			"cale_relativa":"idei.jpg",
+			"nume":"Viziune",
+			"descriere":"Un lider înțelept ghidează echipa către succes.",
+			"timp":["dimineata","zi","noapte"]
+			
+		},
+		{
+			"cale_relativa":"intalnire.jpg",
+			"nume":"Coeziune",
+			"descriere":"Spiritul de echipă este cheia pentru obținerea succesului.",
+			"timp":["dimineata","zi","noapte"]
+			
+		},
+		{
+			"cale_relativa":"meet.jpg",
+			"nume":"Responsabilitate ",
+			"descriere":"Munca în echipă creează o sinergie puternică și rezultate remarcabile.",
+			"timp":["dimineata","zi","noapte"]
+			
+		},
+		
+		{
+			"cale_relativa":"cod.jpg",
+			"nume":"Productivitate",
+			"descriere":"Reușita vine atunci când depășești obstacolele cu determinare.",
 			"timp":["dimineata","zi","noapte"]
 		}
 
