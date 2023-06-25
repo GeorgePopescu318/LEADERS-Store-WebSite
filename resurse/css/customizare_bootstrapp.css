@@ -29,7 +29,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: red;
+  --bs-primary: green;
   --bs-secondary: purple;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -2226,8 +2226,8 @@ textarea.form-control-lg {
   box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25);
 }
 .form-check-input:checked {
-  background-color: red;
-  border-color: red;
+  background-color: #055b5d;
+  border-color: #055b5d;
 }
 .form-check-input:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");

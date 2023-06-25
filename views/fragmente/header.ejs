@@ -5,17 +5,19 @@
     </h1>
 
 </header>
-<nav>   
+<nav>
     </label>
     <label class="hamburger-menu">
         <input type="checkbox">
-        </label>
+    </label>
     </label>
     <ul class="meniu">
         <li>
             <a href="#" id="acasa" class="meniu-principal">Acasă
             </a>
-            <div id="acasa-mediu"><spam class="fa fa-home"></samp></div>
+            <div id="acasa-mediu">
+                <spam class="fa fa-home"></samp>
+            </div>
             <ul>
                 <li class="sub-meniu">
                     <a href="#viziune"><span class="sageata">&#10230</span>Viziune</a>
@@ -30,18 +32,33 @@
                 <div>Produse</div>
                 <ul>
                     <li><a href="/produse">Toate</a></li>
-                    <li><a href="/produse?tip=cofetarie">Prajituri</a></li>   
-                    <li><a href="/produse?tip=gelaterie">Înghetata</a></li>   
-                    <li><a href="/produse?tip=patiserie">Patiserie</a></li> 
-                    <!--aici pun for in esj si unnset-->  
+                    <li><a href="/produse?tip=cofetarie">Prajituri</a></li>
+                    <li><a href="/produse?tip=gelaterie">Înghetata</a></li>
+                    <li><a href="/produse?tip=patiserie">Patiserie</a></li>
+                    <!--aici pun for in esj si unnset-->
                 </ul>
             </a>
         </li>
         <li>
-            <a href="#autohton" class="meniu-principal">Autohton</a>
+            <a href="#galerie" class="meniu-principal">Galerie</a>
         </li>
         <li>
             <a href="#intrebari" class="meniu-principal">Întrebări</a>
         </li>
+        <li>
+            <a class="meniu-principal">Tema</a>
+            <ul>
+                <li class="sub-meniu"><input type="radio" id="light" name="nume" value="Light">
+                    <label for="light"><div class="theme">Light</div></label><i class="fas fa-sun"></i>
+                </li>
+                <li class="sub-meniu"><input type="radio" id="dark" name="nume" value="Dark">
+                    <label for="dark"></i><div class="theme">Dark</div></label><i class="fas fa-moon"></i>
+                </li>
+                <li class="sub-meniu"><input type="radio" id="autohton" name="nume" value="Autohton">
+                    <label for="autohton"> <div class="theme">Autohton</div></label><i class="fas fa-tree"></i>
+                </li>
+            </ul>
+        </li>
     </ul>
+
 </nav>

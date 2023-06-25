@@ -163,3 +163,7 @@ ul.meniu>li:nth-child(odd){
         transform: scaleY(1)
     }
 }
+
+.theme{
+    color: white;
+}

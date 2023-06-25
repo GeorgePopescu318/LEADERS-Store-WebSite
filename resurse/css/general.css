@@ -155,6 +155,7 @@ body {
     --culoare-autohton-fundal: #faad19;
     --culoare-autohton-scris: #797f8a;
     --culoare-tabel-par: #f3f3f3;
+    --culoare-produs-margine:#295ca9;
 }
 
 body.dark {
@@ -169,13 +170,29 @@ body.dark {
     --culoare-autohton-fundal: #faad19;
     --culoare-autohton-scris: #797f8a;
     --culoare-tabel-par: #f3f3f3;
+    --culoare-produs-margine:#3A82F0;
+}
+
+body.autohton {
+    --culoare-fundal-inchis: #C886FF;
+    --culoare-fundal-site: #797f8a;
+    --culoare-scris-1: #faad19;
+    --culoare-scris-2: #002561;
+    --culoare-scris: #faad19;
+    --culoare-meniu: #797f8a;
+    --culoare-secundara-1: #faad19;
+    --culoare-secundara-2: #00a1a9;
+    --culoare-autohton-fundal: #faad19;
+    --culoare-autohton-scris: #797f8a;
+    --culoare-tabel-par: #f3f3f3;
+    --culoare-produs-margine:#FFDD19;
 }
 
 body {
     color: var(--culoare-scris-1);
     padding-left: var(--spatiere-pagina);
     padding-right: var(--spatiere-pagina);
-    min-width: 450px;
+    max-width: 450px;
     margin: 0;
 }
 
@@ -194,6 +211,7 @@ h3 {
 #grid-pagina>* {
     border: 3px solid var(--culoare-secundara-1);
     padding: var(--padding-sectiune);
+    
 }
 
 
@@ -204,7 +222,7 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
         "z-cover z-cover z-cover"
-        "z-calendar z-tabel z-anunturi"
+        "z-galerie z-tabel z-anunturi"
         "z-utilizatori z-tabel z-anunturi"
         "z-utilizatori z-statistici z-info"
         "z-viziune z-scopul z-produsele-noastre"
@@ -227,8 +245,8 @@ h3 {
 
 }
 
-#calendar {
-    grid-area: z-calendar
+#galerie {
+    grid-area: z-galerie
 }
 
 #tabel {

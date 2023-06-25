@@ -10,9 +10,9 @@ const { Client } = require('pg');
 const AccesBD= require("./module_proprii/accesbd.js");
  
 AccesBD.getInstanta().select(
-    {tabel:"prajituri",
-    campuri:["nume", "pret", "calorii"],
-    conditiiAnd:["pret>7"]},
+    {tabel:"merch",
+    campuri:["nume", "pret", "culoare"],
+    conditiiAnd:["pret>0"]},
     function (err, rez){
         console.log(err);
         console.log(rez);
@@ -27,7 +27,7 @@ var client = new Client({
     port: 5432
 });
 client.connect();
-client.query("select * from prajituri", function (err, rez) {
+client.query("select * from merch", function (err, rez) {
     console.log("eroare:", err)
     console.log("rezultat:", rez)
 })
@@ -43,7 +43,7 @@ obGlobal = {
     optiuniMeniu: []
 }
 
-client.query("select * from unnest(enum_range(null::tipuri_produse))", function (err, rezCategorie) {
+client.query("select * from unnest(enum_range(null::categ_merch))", function (err, rezCategorie) {
     if (err) {
         console.log(err)
     }
@@ -147,20 +147,20 @@ app.get(["/index", "/", "/home"], function (req, res) {
 })
 //-------------------------------------------------Produse-----------------------------------------------
 app.get("/produse", function (req, res) {
-    client.query("select * from unnest(enum_range(null::categ_prajitura))", function (err, rezCategorie) {
+    client.query("select * from unnest(enum_range(null::categ_merch))", function (err, rezCategorie) {
         if (err) {
             console.log(err)
         }
         else {
             let conditieWhere = "";
             if (req.query.tip) {
-                conditieWhere = `where tip_produs='${req.query.tip}'`
+                conditieWhere = `where categ_merch='${req.query.tip}'`
             }
-            client.query("select * from prajituri" +conditieWhere, function (err, rez) {
+            client.query("select * from merch" +conditieWhere, function (err, rez) {
                 console.log(300)
                 if (err) {
                     console.log(err);
-                    afisareEroare(res, 2);
+                    afiseazaEroare(res, 2);
                 }
                 else
                     res.render("pagini/produse", { produse: rez.rows, optiuni: rezCategorie.rows });
@@ -173,13 +173,15 @@ app.get("/produse", function (req, res) {
 app.get("/produs/:id", function (req, res) {
     console.log(req.params);
 
-    client.query(` select * from parjituri where id=${req.params.id} `, function (err, rezultat) {
+    client.query(` select * from merch where id=${req.params.id} `, function (err, rezultat) {
         if (err) {
             console.log(err);
-            afisareEroare(res, 2);
+            afiseazaEroare(res, 2);
         }
-        else
+        else{
+            console.log(rezultat.rows[0]);
             res.render("pagini/produs", { prod: rezultat.rows[0] });
+        }
     });
 });
 

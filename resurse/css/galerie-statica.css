@@ -43,3 +43,8 @@ figcaption {
   scale: 1.25;
   border-radius: 10%;
 }
+
+.photo-0, .photo-1, .photo-3 > picture {
+  display: block;
+  width: 5%;
+}
