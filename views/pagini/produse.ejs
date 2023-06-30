@@ -1,44 +1,310 @@
 <!DOCTYPE html>
-<html  lang="ro">
-    <head>
-        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
-        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
-        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
-        <link rel="stylesheet" href="/resurse/css/produse500.css" type="text/css" media="screen and (max-width: 500px)" />
-        <title>Cofetăria Dulcelind - home</title>
-        <%- include("../fragmente/head") %>     
+<html lang="ro">
+
+<head>
+    <meta name="description"
+        content="Pagina oficială de store a Fundație LEADERS. Aici puteți găsi tricouri, hanorace, cani etc. cu modele voastre preferate cu LEADERS.">
+    <meta name="keywords" content="LEADERS, merch, tricou, hanroc, brățară, fundație, merch, tricou LEADERS, LEADING THE PROGRESS, brățări LEADERS,
+    tricou EXPLORE, tricou EXPERIENCE, tricou CHALLENGE">
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/produse500.css" type="text/css" media="screen and (max-width: 500px)" />
+    <title>LEADERS Store - Produse</title>
+    <%- include("../fragmente/head") %>
         <script type="text/javascript" src=/resurse/js/produse.js></script>
 
-    </head>
-    <body>
+</head>
+
+<body>
     <%- include("../fragmente/header") %>
 
-    <main>
-
-            <h2>Produse</h2>
-            <div class="grid-produse">
-                <% for( let prod of locals.produse) { %>
-                    <article class="produs" >
-                           <img src="/resurse/imagini/produse/surub.png" id="surub"></a>
-                        <figure>
-                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.nume %>]" /></a>
-                        </figure>
-                        <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
-                        <div class="info-prod">
-                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+        <main>
+            <button class="btn btn-secondary" id="filtre" style="margin-top: 10vh;">Afiseaza filtre</button><br><br>
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="form-floating">
+                            <textarea class="form-control" id="inp-nume" rows="1" cols="20" required></textarea>
+                            <label for="inp-nume">Nume</label>
+                            <div class="valid-feedback">Super!</div>
+                            <div class="invalid-feedback">Alege, te rog, un nume.</div>
                         </div>
-                        <p class="marime">Marime:<span class="val-marime"><%- prod.marime%></span></p>
-                        
-                        <label class="selecteaza-cos">
-                            Selectează:<br/>
-                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
-                        </label>
-                    </article>
-                <% }%>
-            </div>
-        </section>
-    </main>
+                    </div>
+                </div><br>
+                <div class="col-sm">
+                    <label> Pret minim: <input type="range" id="inp-pretlow" value="0" min="0" max="50"> <span
+                            id="infoRangelow">(0)</span></label>
+                    <script>
+                        var rangeInputlow = document.getElementById("inp-pretlow");
+                        var infoRangelow = document.getElementById("infoRangelow");
 
-    <%- include("../fragmente/footer") %>
-    </body>
+                        rangeInputlow.addEventListener("input", function () {
+                            infoRangelow.textContent = "(" + rangeInputlow.min + " - " + rangeInputlow.max + ")";
+                        });
+                    </script>
+                    <label> Pret maxim: <input type="range" id="inp-prethigh" value="0" min="0" max="50"> <span
+                        id="infoRangehigh">(0)</span></label>
+                <script>
+                    var rangeInputhigh = document.getElementById("inp-prethigh");
+                    var infoRangehigh = document.getElementById("infoRangehigh");
+
+                    rangeInputhigh.addEventListener("input", function () {
+                        infoRangehigh.textContent = "(" + rangeInputhigh.min + " - " + rangeInputhigh.max + ")";
+                    });
+                </script>
+                </div><br><br><br>
+                <div class="col-sm">
+                    <label for="inp-categoriem">Categorie produse:</label>
+                    <button class="btn btn-secondary" id="btn-inp-categoriem">Arata</button>
+                    <select list="inp-categorielistm" id="inp-categoriem" name="inp-categoriem" value="toate" multiple>
+                        <option value="toate">toate</option>
+                        <% for (let opt of locals.optiuni) { %>
+                            <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                            <% } %>
+                    </select><br><br>
+                    <div class="row">
+                        <div class="col-sm"> Nr. produse:
+                            <label>Putine produse (produse &lt; 10)<input id="i_rad1" name="gr_rad" value="0:10"
+                                    type="radio" class="custom-control-input" /></label><br>
+                            <label>Moderat (10 &le; subiecte &lt; 50)<input id="i_rad2" name="gr_rad" value="10:50"
+                                    type="radio" class="custom-control-input" /></label><br>
+                            <label>Multe (50 &le; produse)<input id="i_rad3" name="gr_rad" value="50:1000000000"
+                                    type="radio" class="custom-control-input" /></label><br>
+                            <label>Toate<input id="i_rad4" checked name="gr_rad" value="toate" type="radio"
+                                    class="custom-control-input" /></label><br>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <fieldset>
+                            <label>Culori:</label>
+                            <div class="inp-culoare">
+                                <input type="checkbox" id="orice" value="orice"><label for="orice"
+                                    checked="checked">&emsp;&emsp;Orice culoare</label><br>
+                                <input type="checkbox" id="alb" value="alb"><label for="alb">&emsp;&emsp;Alb</label><br>
+                                <input type="checkbox" id="albastru" value="albastru"><label
+                                    for="albastru">&emsp;&emsp;Albastru</label><br>
+                                <input type="checkbox" id="verde" value="verde"><label
+                                    for="verde">&emsp;&emsp;Verde</label><br>
+                            </div>
+                        </fieldset><br>
+                        <div class="col-md-4 mb-3">
+                            <label for="inp-cuvant">Cauta dupa cuvant: </label>
+                            <input type="text" id="inp-cuvant" class="form-control">
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm">
+                                <label for="inp-material">Categorie material:</label>
+                                <input list="inp-categorielist" id="inp-material" name="inp-material"
+                                    value="toate"><br><br>
+                                <datalist id="inp-categorielist">
+                                    <% for (let opt of obGlobal.material) { %>
+                                        <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                                        <% } %>
+                                </datalist>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <label>Se poate spala?
+                                    <select id="inp-de_spalat">
+                                        <option id="sel-toate" selected value="toate">toate</option>
+                                        <option value="true">da</option>
+                                        <option value="false">nu</option>
+                                    </select>
+                                </label><br><br>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <script>
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        var forms = document.getElementsByClassName('needs-validation');
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+            <p>
+                <button class="btn btn-secondary" id="filtrare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg> <a>Filtreaza</a></button>
+                <button class="btn btn-secondary" id="resetare"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z" />
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z" />
+                    </svg> <a>Reseteaza</a></button><br /><br>
+                <button class="btn btn-secondary" id="sortCrescNume"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+                    </svg> <a>Sorteaza crescator dupa nume si raport</a></button>
+                <button class="btn btn-secondary" id="sortDescrescNume"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+                    </svg> <a>Sorteaza descrescator dupa nume si raport</a></button>
+                <br><br><button class="btn btn-secondary" id="ieftin">Cel mai ieftin produs</button>
+                <button class="btn btn-secondary" id="scump">Cel mai scump produs</button>
+            </p>
+            <br>
+            <div class="row">
+                <div class="col-sm">
+
+                    <!-- <button class="btn btn-secondary" id="sortCrescNume">Sorteaza crescator dupa pret si nume <i class="bi bi-sort-up"></i></button>
+                    <button class="btn btn-secondary" id="sortDescrescNume">Sorteaza descrescator dupa pret si nume <i class="bi bi-sort-down"></i></button>  -->
+                    <div class="sortare_dinamica">
+                        <!-- Exemplu de select-uri pentru cheile de sortare -->
+                        <select id="selectCheie1" class="form-select form-select-sm">
+                            <option value="pret">Preț</option>
+                            <option value="nume">Nume</option>
+                            <option value="categorie">Categorie</option>
+                        </select>
+
+                        <select id="selectCheie2" class="form-select form-select-sm">
+                            <option value="pret">Preț</option>
+                            <option value="nume">Nume</option>
+                            <option value="categorie">Categorie</option>
+                        </select>
+
+                        <!-- Exemplu de select pentru ordine -->
+                        <select id="selectOrdine" class="form-select form-select-sm">
+                            <option value="crescator">Crescător</option>
+                            <option value="descrescator">Descrescător</option>
+                        </select>
+
+                        <!-- Buton pentru a aplica sortarea -->
+                        <button id="btnSortare" class="btn btn-secondary btn-sm">Sortează</button>
+
+                    </div>
+
+                </div>
+                <button class="btn btn-secondary" id="sumaproduselor"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg> <a>Suma preturilor produselor afișate.</a></button><br><br>
+                <section id="produse">
+                    <h2>Produse</h2>
+                    <div class="grid-produse">
+                        <% for( let prod of locals.produse) { %>
+                            <article class="produs" id="<%-" art" + prod.id-%>">
+                                <img src="/resurse/imagini/produse/surub.png" id="surub"></a>
+                                <figure>
+                                    <a href="/produs/<%-prod.id %>"><img
+                                            src="/resurse/imagini/produse/<%- prod.imagine %>"
+                                            alt="[imagine <%- prod.nume %>]" /></a>
+                                </figure>
+                                <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>"><span class="val-nume"><%-
+                                                prod.nume%></span></a></h3>
+                                <h4 class="categorie">Categorie: <span class="val-categorie"><%- ' '
+                                            +prod.categorie.toUpperCase()%></span></h4>
+                                <div class="info-prod">
+                                    <table>
+                                        <tr>
+                                            <th>Caracteristica</th>
+                                            <th>Valoare</th>
+                                        </tr>
+                                        <tr>
+                                            <span class="pret">
+                                                <td>Pret:</td>
+                                                <td><span class="val-pret">&emsp;<%- prod.pret%> RON</td>
+                                            </span></span>
+                                        </tr>
+                                        <tr>
+                                            <span class="culoare">
+                                                <td>Culoare:</td>
+                                                <td><span class="val-culoare">&emsp;<%- prod.culoare%></td>
+                                            </span></span>
+                                        </tr>
+                                        <tr>
+                                            <span class="marime">
+                                                <td>Marimi:</td>
+                                                <td><span class="val-marime">&emsp;<%- prod.marime%></td>
+                                            </span></span>
+                                        </tr>
+                                        <script>
+                                            function getDefaultDate(inputDate) {
+                                                const months = [
+                                                    "Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie",
+                                                    "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"
+                                                ];
+
+                                                const daysOfWeek = [
+                                                    "Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"
+                                                ];
+
+                                                const day = inputDate.getDate();
+                                                const month = months[inputDate.getMonth()];
+                                                const year = inputDate.getFullYear();
+                                                const dayOfWeek = daysOfWeek[inputDate.getDay()];
+
+                                                const formattedDate = `${day}/${month}/${year} (${dayOfWeek})`;
+                                                return formattedDate;
+                                            }
+                                        </script>
+                                        <tr>
+                                            <span class="data_adaugare">
+                                                <td>Data adaugare:</td>
+                                                <td><span class="val-data_adaugare"
+                                                        datetime="<%- prod.data_adaugare %>"><time>&emsp;
+                                                            <script>document.write(getDefaultDate(new Date("<%- prod.data_adaugare %>")))</script>
+                                                        </time>
+                                                </td>
+                                            </span></span>
+                                        </tr>
+                                        <script>
+                                            function de_spalat(input) {
+                                                if (input == "true")
+                                                    return "da";
+                                                else
+                                                    return "nu";
+                                            }
+                                        </script>
+                                        <tr>
+                                            <span class="de_spalat ">
+                                                <td>Se poate spala?</td>
+                                                <td><span class="val-de_spalat">&emsp;
+                                                        <script>document.write(de_spalat("<%- prod.de_spalat%>"))</script>
+                                                </td>
+                                            </span></span>
+                                        </tr>
+                                    </table>
+                                    <p style="display: none;" class="val-descriere">Descriere: <span
+                                            class="val-descriere"><%- ' ' +prod.descriere%></span></p>
+                                    <p style="display: none;">Produse_disponibile: <span
+                                            class="val-produ_disp"><%-prod.produ_disp%></span></p>
+                                    <p style="display: none;">Material: <span class="val-material"><%-
+                                                prod.material%></span></p>
+                                </div>
+
+                                <label class="btn btn-secondary" id="buton">
+                                    Selectează:<br/>
+                                    <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                                </label>
+                            </article>
+                            <% }%>
+                        <p id="demo"></p>
+                    </div>
+                </section>
+        </main>
+
+        <%- include("../fragmente/footer") %>
+</body>
+
 </html>

@@ -19,17 +19,17 @@
         <main id="grid-pagina">
             <section id="cover">
                 <picture>
-                    <img src="./resurse/imagini/explore_cover.png" title="Explore yourself" width="100%">
+                    <img id="poza-cover" src="./resurse/imagini/explore_cover.png" title="Explore yourself">
                 </picture>
             </section>
             <section id="galerie">
                 <%- include("../fragmente/galerie-statica.ejs") %>
             </section>
             <section id="anunturi">
-                <p>anunturi Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquam magni nobis minus
-                    dolore
-                    placeat aspernatur voluptatem in mollitia, quaerat facere ipsum, ullam, quasi beatae maxime odit
-                    dolores! Accusamus, numquam.</p>
+                <h3>Anunturi</h3>
+                <p>Susține educația și liderii viitori cu merchandise-ul <b class="LDRS">Fundației</b> <b class="LDRS">LEADERS</b>! Fiecare achiziție contribuie
+                    la sprijinirea programelor de dezvoltare personală și profesională pentru tinerii lideri. Descoperă
+                    tricouri, căni și alte produse de calitate superioară și fii parte din schimbarea pozitivă!</p>
             </section>
             <section id="utilizatori">
                 <p>Utilizatori online</p>
@@ -49,7 +49,7 @@
                                     Material
                                 </th>
                                 <th>
-                                    Produse vândute
+                                    Produse vandute
                                 </th>
                                 <th>
                                     Preț
@@ -68,7 +68,7 @@
                                     1000
                                 </th>
                                 <th>
-                                    100 lei
+                                    30 RON
                                 </th>
                             </tr>
                             <tr>
@@ -79,7 +79,7 @@
                                     750
                                 </th>
                                 <th>
-                                    200 lei
+                                    50 RON
                                 </th>
                             </tr>
                             <tr>
@@ -93,29 +93,29 @@
                                     500
                                 </th>
                                 <th>
-                                    25 lei
+                                    5 RON
                                 </th>
                             </tr>
                             <tr>
                                 <th>
-                                    Cană
+                                    Cană LEADERS
                                 </th>
                                 <th>
-                                    Ceramică
+                                    Ceramica
                                 </th>
                                 <th>
                                     250
                                 </th>
                                 <th>
-                                    75 lei
+                                    30 RON
                                 </th>
                             </tr>
                             <tr>
                                 <th>
-                                    Brățără
+                                    Dosar
                                 </th>
                                 <th>
-                                    Cauciuc
+                                    Carton
                                 </th>
                                 <th>
                                     1000
@@ -141,29 +141,43 @@
                         </tbody>
                         <tfoot>
                         </tfoot>
-                        <caption>
-                            Toate datele sunt din anul 2022
-                        </caption>
                     </table>
+                    <caption>
+                        Toate datele sunt din anul 2022
+                    </caption>
                 </div>
             </section>
             <section id="info">
                 <p>Info despre site si server</p>
+                
             </section>
             <section id="statistici">
-                <p>
-                    Ip: <%- locals.ip %>
-                </p>
-                <p>
-                    Suma: <%- locals.a+locals.b %>
-                </p>
+                <% if(!locals.utilizator) { %>
+                    <!--Verificam daca este logat utilizatorul, iar daca nu este ii vom afisa formularul-->
+                    <form id="form_inreg"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+                        <p>
+                            <label>
+                                Username: <input type="text" name="username" id="inp-username" value="" required">
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                Parola: <input id="parl" type="password" required  name="parola" value="">
+                            </label>
+                        </p>
+                        <p><input type="submit" value="Logare"></p>
+                    </form>
+                    <p><%- locals.mesajLogin %></p>
+                    <% } else {%>
+                       <%- locals.succesLogin %>
+                    <% }  %>
             </section>
             <section id="viziune">
                 <h3>
                     Orice lucru bine făcut are în spate o VIZIUNE
                 </h3>
                 <p>
-                    <b>Fundația</b> <b>LEADERS</b> este o orgsanizație care formează și susține oamenii cu valori și
+                    <b>Fundația</b> <b class="LDRS">LEADERS</b> este o orgsanizație care formează și susține oamenii cu valori și
                     principii să devină liderii responsabili care fac România puternică la toate nivelurile. Programe și
                     experiențe educaționale adaptate realității din România, create pe baza unui model de leadership
                     autohton.
@@ -173,13 +187,13 @@
                     <picture>
                         <source media="(max-width: 720px)" srcset="./resurse/imagini/LDRS_poza_phone.png">
                         <source media="(max-width: 1024px)" srcset="./resurse/imagini/LDRS_poza_50.png">
-                        <img src="./resurse/imagini/LDRS_poza.png" title="Fundația LEADERS" width="100%" height="100%">
+                        <img class="LDRS_poza" src="./resurse/imagini/LDRS_poza.png" title="Fundația LEADERS">
                     </picture>
                     <figcaption><q>Un drum lin este
                             un drum cu <b>MISIUNE</b></q></figcaption>
                 </figure>
                 <hr class="hr-new5">
-                <p>Iar <dfn>misiunea</dfn> <b>LEADERS</b> este să declanșeze potențialul tinerilor și să formeze lideri
+                <p>Iar <dfn>misiunea</dfn> <b class="LDRS">LEADERS</b> este să declanșeze potențialul tinerilor și să formeze lideri
                     vizionari, responsabili și curajoși, prin programe de leadership practice, croite pe fiecare nivel
                     de
                     dezvoltare.</p>
@@ -189,7 +203,7 @@
                     Scopul Magazinului
                 </h3>
                 <p>
-                    Din banii opținuți în urma vânzărilor <b>merch</b>-ului LEADERS vom putea să le oferim inspirația
+                    Din banii opținuți în urma vânzărilor <b>merch</b>-ului <b class="LDRS"> LEADERS </b> vom putea să le oferim inspirația
                     cât mai multor tineri. <br>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quos nostrum
                     facilis, alias cumque minus autem magnam ut fugiat maiores molestias nesciunt ad ducimus. Tempora
@@ -203,18 +217,18 @@
                 <ul class="fa-ul">
                     <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Hanorace</b></li>
                     <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Tricouri</b></li>
-                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Căni</b></li>
-                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Brățări</b></li>
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Cani</b></li>
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Pergamente</b></li>
                     <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Pinuri</b></li>
-                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Sticker</b></li>
+                    <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Snururi</b></li>
                 </ul>
             </section>
-            <section id="autohton">
+            <section class="autohton">
                 <h2 class="autohton-culoare">
                     Autohton
                 </h2>
                 <p>
-                    Saptămânal pe pagina de YouTube a Fundației <b class="autohton-font">LEADERS</b> puteți urmări
+                    Saptămânal pe pagina de YouTube a Fundației <b class="LDRS" class="autohton-font">LEADERS</b> puteți urmări
                     podcastul plin de inspiratie
                     <span class="autohton-font">Autohton</span>.
                 </p><br>
@@ -225,8 +239,7 @@
                         class="butoane-iframe">Episodul
                         1</a><br />
 
-                    <iframe name="ifr-video" width="400px" height="300px"
-                        src="https://www.youtube.com/embed/7oci96dN0BM" frameborder="0" scale="auto"
+                    <iframe name="ifr-video" class="iframe" src="https://www.youtube.com/embed/7oci96dN0BM"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>

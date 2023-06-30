@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html  lang="ro">
     <head>
-        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
-        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        <meta name="description" content="Pagina oficială de store a Fundație LEADERS. Aici puteți găsi tricouri, hanorace, cani etc. cu modele voastre preferate cu LEADERS.">
+        <meta name="keywords" content="LEADERS, merch, tricou, hanroc, brățară, fundație, merch, tricou LEADERS, LEADING THE PROGRESS, brățări LEADERS,
+        tricou EXPLORE, tricou EXPERIENCE, tricou CHALLENGE">
         
-        <title>Cofetăria Dulcelind - home</title>
+        <title>LEADERS Store - Produs</title>
         <%- include("../fragmente/head") %>     
         <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
     </head>
@@ -15,18 +16,49 @@
         <section>
             <h2>Pagină produs</h2>
                 <article id="art-produs">
-                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
-                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
-                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
-                    <p>Ingrediente: <span class="ingrediente"><%- locals.prod.ingrediente %> </span></p>
-                    <p>Calorii: <span class="calorii"><%- locals.prod.calorii %> </span></p>
-                    <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> </span></p>
-                    <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
-                    <p>Pentru diabetici: <span class="pt_diabetici"><%- locals.prod.pt_diabetici %> </span></p>
-                    <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
                     <figure class="imag-produs">
                         <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
-                    </figure>    
+                    </figure>
+                    <div class="scris">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <h4>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></h4>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> RON</span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Produse disponibile : <span class="produ_disp  "><%- locals.prod.produ_disp   %> </span></p>
+                    <p>Marimi: <span class="marime"><%- locals.prod.marime %> </span></p>
+                    <p>Material: <span class="material"><%- locals.prod.material %> </span></p>
+                    <p>Culoare : <span class="culoare "><%- locals.prod.culoare  %> </span></p>
+                    <script>
+                        function de_spalat(input){
+                            if(input == "true")
+                                return "da";
+                            else
+                                return "nu";
+                        }
+                    </script>
+                    <p>Se poate spala? <span class="de_spalat "><script>document.write(de_spalat("<%- locals.prod.de_spalat%>"))</script></span></p>
+                    <script>
+                        function getDefaultDate(inputDate) {
+                            const months = [
+                                "Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie",
+                                "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"
+                            ];
+
+                            const daysOfWeek = [
+                                "Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"
+                            ];
+
+                            const day = inputDate.getDate();
+                            const month = months[inputDate.getMonth()];
+                            const year = inputDate.getFullYear();
+                            const dayOfWeek = daysOfWeek[inputDate.getDay()];
+
+                            const formattedDate = `${day}/${month}/${year} (${dayOfWeek})`;
+                            return formattedDate;
+                        }
+                    </script>
+                    <p>Data adăugare: <span class="data_adaugare "><script>document.write(getDefaultDate(new Date("<%- prod.data_adaugare %>")))</script></span></p>
+                </div>
                 </article>
             
         </section>

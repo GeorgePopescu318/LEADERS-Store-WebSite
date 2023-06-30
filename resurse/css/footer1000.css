@@ -1,0 +1,13 @@
+#banner {
+    background-color: var(--culoare-secundara-2);
+    position: fixed;
+    font-size: 2vw;
+    bottom: 25vh;
+    opacity: 0.75;
+    left: 0;
+    width: 25vw;
+    height: 25vw;
+    display: inline; /* Bannerul este inițial ascuns */
+    animation: none; /* Aplică animația definită mai sus */
+    animation-fill-mode: forwards; /* Pastram starea finala a animatiei */
+}

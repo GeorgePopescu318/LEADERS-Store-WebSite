@@ -24,18 +24,17 @@ var array = array1.slice(0,array1.length - (array1.length%3));
             continue;
         }
         if (counter == 0){
-          %><div id="grid-galerie">
+          %><div class="grid-galerie">
             <%
             
         }
-        
                 %>
                 <div class="<%- "photo-"+counter%>">
                   <figure class="image">
                     <picture>
-                      <source srcset="<%- imag.fisier_mic %>" media="(max-width:500px)" />
-                      <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
-                      <img src="<%- imag.fisier %>" title="<%- imag.descriere %>"alt="imagine">
+                      <source srcset="<%- imag.fisier_mic %>" media="(max-width:500px)" >
+                      <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" >
+                      <img class="imagine-galerie" src="<%- imag.fisier %>" title="<%- imag.descriere %>" alt="Spiritul LEADERS">
                     </picture>
                     <figcaption><%- imag.nume %> </figcaption>
                   </figure>

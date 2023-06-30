@@ -13,7 +13,12 @@ body {
     overflow-x: scroll;
 }
 
-tabel {
+.continut-tabel {
+    font-size: 2.5vw;
+    width: 98vw;
+}
+
+.tabel {
     border-spacing: 0;
 }
 

@@ -1,3 +1,8 @@
 .grid-produse {
     display:block;
+    
+}
+.grid-produse .produs{
+    margin-bottom: 5vh;
+    overflow: hidden;
 }

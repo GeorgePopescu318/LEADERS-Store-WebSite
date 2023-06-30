@@ -183,33 +183,6 @@ class AccesBD{
         this.client.query(comanda,callback)
     }
 
-    // updateParametrizat({tabel="",campuri=[],valori=[], conditiiAnd=[]} = {}, callback, parametriQuery){
-    //     if(campuri.length!=valori.length)
-    //         throw new Error("Numarul de campuri difera de nr de valori")
-    //     let campuriActualizate=[];
-    //     for(let i=0;i<campuri.length;i++)
-    //         campuriActualizate.push(`${campuri[i]}=$${i+1}`);
-    //     let conditieWhere="";
-    //     if(conditiiAnd.length>0)
-    //         conditieWhere=`where ${conditiiAnd.join(" and ")}`;
-    //     let comanda=`update ${tabel} set ${campuriActualizate.join(", ")}  ${conditieWhere}`;
-    //     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1111",comanda);
-    //     this.client.query(comanda,valori, callback)
-    // }
-
-
-    //TO DO
-    // updateParametrizat({tabel="",campuri={}, conditiiAnd=[]} = {}, callback, parametriQuery){
-    //     let campuriActualizate=[];
-    //     for(let prop in campuri)
-    //         campuriActualizate.push(`${prop}='${campuri[prop]}'`);
-    //     let conditieWhere="";
-    //     if(conditiiAnd.length>0)
-    //         conditieWhere=`where ${conditiiAnd.join(" and ")}`;
-    //     let comanda=`update ${tabel} set ${campuriActualizate.join(", ")}  ${conditieWhere}`;
-    //     this.client.query(comanda,valori, callback)
-    // }
-
     delete({tabel="",conditiiAnd=[]} = {}, callback){
         let conditieWhere="";
         if(conditiiAnd.length>0)

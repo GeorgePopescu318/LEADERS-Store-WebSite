@@ -1,4 +1,3 @@
-<script src="resurse/js/tema.js"></script>
 <header>
     <h1>
         LEADERS Store
@@ -6,56 +5,78 @@
 
 </header>
 <nav>
-    </label>
     <label class="hamburger-menu">
         <input type="checkbox">
     </label>
-    </label>
     <ul class="meniu">
         <li>
-            <a href="#" id="acasa" class="meniu-principal">Acasă
+            <a href="/index" id="acasa" class="meniu-principal">Acasă
             </a>
             <div id="acasa-mediu">
-                <spam class="fa fa-home"></samp>
+                <span class="fa fa-home"></span>
             </div>
             <ul>
                 <li class="sub-meniu">
-                    <a href="#viziune"><span class="sageata">&#10230</span>Viziune</a>
+                    <a href="/index#viziune"><span class="sageata">&#10230;</span>Viziune</a>
                 </li>
                 <li class="sub-meniu">
-                    <a href="#scopul"><span class="sageata">&#10230</span>Scop</a>
+                    <a href="/index#scopul"><span class="sageata">&#10230;</span>Scop</a>
+                </li>
+                <li class="sub-meniu">
+                    <a href="/index#intrebari"><span class="sageata">&#10230;</span>Întrebări</a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="#produsele-noastre" class="meniu-principal">
-                <div>Produse</div>
+            <a href="/produse" class="meniu-principal">
+                <div>Produse</div></a>
                 <ul>
-                    <li><a href="/produse">Toate</a></li>
-                    <li><a href="/produse?tip=cofetarie">Prajituri</a></li>
-                    <li><a href="/produse?tip=gelaterie">Înghetata</a></li>
-                    <li><a href="/produse?tip=patiserie">Patiserie</a></li>
-                    <!--aici pun for in esj si unnset-->
+                    <li class="sub-meniu"><a href="/produse" ><span class="sageata">&#10230;</span>Toate</a></li>
+                    <%
+                    for (let i=0; i < obGlobal.optiuniMeniu.length; i++) { %>
+                    <li><a class="sub-meniu" href="/produse?tip=<%- obGlobal.optiuniMeniu[i].unnest %>"><span class="sageata">&#10230;</span><%- obGlobal.optiuniMeniu[i].unnest %></a></li>
+                    <% } %>
                 </ul>
-            </a>
+            
         </li>
         <li>
-            <a href="#galerie" class="meniu-principal">Galerie</a>
+            <a href="/despre" class="meniu-principal">Despre</a>
         </li>
         <li>
-            <a href="#intrebari" class="meniu-principal">Întrebări</a>
+            <a href="/inregistrare" class="meniu-principal">Inregistrare</a>
         </li>
+        <li>
+
+            <a class="meniu-principal" href="/cos-virtual">Cos virtual</a>
+        </li>
+        <% if(locals.utilizator) { %>
+                    <li><div id ="user"><img width="30px" height="30px" src="/<%- locals.utilizator.poza%>" alt="<%- locals.utilizator.username %>" /></div>
+                        <ul>
+                            <li><a href="/profil">Profil</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                <% } %>
+                <% if(locals?.utilizator?.areDreptul?.(Drepturi.vizualizareUtilizatori)) { %>
+                    <li><div>Administrare</div>
+                        <ul>
+                            <li><a href="/useri">Useri</a></li>
+                            <li><a href="/grafice">Grafice</a></li>
+                            <li><a href="/comenzi">Comenzi</a></li>
+                        </ul>
+                    </li>
+                <% } %>
         <li>
             <a class="meniu-principal">Tema</a>
             <ul>
                 <li class="sub-meniu"><input type="radio" id="light" name="nume" value="Light">
-                    <label for="light"><div class="theme">Light</div></label><i class="fas fa-sun"></i>
+                    <label for="light"><span class="theme">Light</span></label><i class="fas fa-sun"></i>
                 </li>
                 <li class="sub-meniu"><input type="radio" id="dark" name="nume" value="Dark">
-                    <label for="dark"></i><div class="theme">Dark</div></label><i class="fas fa-moon"></i>
+                    <label for="dark"><span class="theme">Dark</span></label><i class="fas fa-moon"></i>
                 </li>
                 <li class="sub-meniu"><input type="radio" id="autohton" name="nume" value="Autohton">
-                    <label for="autohton"> <div class="theme">Autohton</div></label><i class="fas fa-tree"></i>
+                    <label for="autohton"> <span class="theme">Autohton</span></label><i class="fas fa-tree"></i>
                 </li>
             </ul>
         </li>

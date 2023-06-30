@@ -1,0 +1,50 @@
+@keyframes slideIn {
+    0% {
+        bottom: -100vw; /* Începe de sub ecran */
+        left: -100vw;
+        opacity: 0;
+        background-color: var(--culoare-meniu);
+    }
+    50% {
+        bottom: -20vw;
+        left: -20vw; /* La jumătatea animației, bannerul va fi 20px deasupra graniței de jos a paginii */
+        opacity: 0.25;
+        background-color: var(--culoare-secundara-1);
+    }
+    75% {
+        bottom: -10vw;
+        left: -10vw; /* La final, bannerul se aliniază cu granița de jos a paginii */
+        opacity: 0.5;
+        background-color: var(--culoare-scris);
+    }
+    100%{
+        bottom: 0;
+        left: 0;
+        opacity: 0.75;
+        background-color: var(--culoare-secundara-2);
+    }
+
+}
+
+#banner {
+    position: fixed;
+    font-size: 2vw;
+    width: 25vw;
+    height: 25vw;
+    display: none; /* Bannerul este inițial ascuns */
+    animation: slideIn ease 5s; /* Aplică animația definită mai sus */
+    animation-fill-mode: forwards; /* Pastram starea finala a animatiei */
+    z-index: 99;
+}
+
+footer{
+    margin-bottom: 30vh;
+}
+
+#banner p{
+    margin-top: 2vw;
+}
+
+#ultima{
+    font-size: 1.5vw;
+}

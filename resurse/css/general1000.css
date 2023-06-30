@@ -8,13 +8,18 @@ body{
     --padding-sectiune: 10px;
 }
 
+.continut-tabel {
+    font-size: 2vw;
+    width: 90vw;
+}
+
 #grid-pagina{
     display:grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-areas: 
         "z-cover z-cover"
-
-        "z-calendar z-tabel"
+        "z-galerie z-galerie"
+        "z-tabel z-tabel"
         "z-anunturi z-utilizatori"
         " z-statistici z-utilizatori  " 
         "z-info z-viziune "

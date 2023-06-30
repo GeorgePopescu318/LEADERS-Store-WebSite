@@ -1,0 +1,22 @@
+
+<div id="container-galerie-animata">
+    <div class="galerie_animata" id="galanim" style="--nrImg: <% locals.nrImagini %>">
+
+        <% var i=0; %>
+            <% for (let imag of locals.imagini) { %>
+                <% i=i + 1; %>
+                    <% if(i> locals.nrImagini) { break; }%>
+                        <% var nume_imag=imag.fisier.split('\\'); %>
+                            <% nume_imag=nume_imag[nume_imag.length - 1]; %>
+                                <figure>
+                                    <picture>
+                                        <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
+                                        <img src="<%- imag.fisier %>" alt=" imagine ">
+                                    </picture>
+                                    <figcaption>
+                                        <%-imag.descriere %>
+                                    </figcaption>
+                                </figure>
+                                <% } %>
+    </div>
+</div>

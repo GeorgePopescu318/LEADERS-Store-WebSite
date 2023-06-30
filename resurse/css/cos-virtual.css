@@ -1,0 +1,24 @@
+main{
+    --padd-main:1rem;
+    padding-left:var(--padd-main);
+    padding-right:var(--padd-main);
+    border-radius: 2rem;
+    overflow: hidden;
+    height: auto;
+    box-shadow: 5px 5px 0px 5px var(--culoare-scris);
+    margin-bottom: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display:block;
+    grid-gap: 3vh 2vw;
+    align-items: center;
+    justify-items: stretch;
+    width: 50vw;
+    height: auto;
+    margin-bottom: 5vh;
+}
+
+main img {
+    width: 100%;
+    height: auto;
+}

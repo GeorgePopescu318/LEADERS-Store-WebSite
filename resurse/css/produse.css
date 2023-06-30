@@ -2,7 +2,7 @@
     padding-top: 5%;
     padding-bottom: 5%;
     display:grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto;
     grid-gap: 3vh 2vw;
     align-items: center;
     justify-items: stretch;
@@ -13,39 +13,31 @@
 .grid-produse .produs{
     border-radius: 2rem;
     overflow: hidden;
+    height: auto;
     box-shadow: 5px 5px 0px 5px var(--culoare-scris);
+    margin-bottom: 0;
 }
 .grid-produse .produs:hover {
     box-shadow: 5px 5px 0px 2px var(--culoare-produs-margine);
     transform: translateY(4px);
   }
-.grid-produse .produs h3{
-    text-align: center;
-    margin-top: 0;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
 .produs img{
     height: auto;
     width: 100%;
     overflow: hidden;
 }
-.grid-produse .produs h3 a{
-    color:black;
-}
-.grid-produse .produs figure{
-    text-align: center;
-}
-.grid-produse .produs figure img{
-    border:1px solid grey
-}
 .grid-produse .produs .info-prod{
     display:flex;
-}
-.grid-produse .produs .info-prod p{
-    width:30%;
+    margin-left: auto;
+    margin-bottom: 4vh;
+    width:100%;
     text-align:center;
     font-weight:bold;
+    color: var(--culoare-scris);
+}
+
+.grid-produse .produs .info-prod > *{
+   font-size: 1rem;
 }
 
 .grid-produse .produs p.categorie{
@@ -56,6 +48,7 @@
 
 .produs{
     position: relative;
+    width: fit-content;
 }
 
 .marime{
@@ -65,17 +58,37 @@
 .selecteaza-cos{
     display: inline-block;
     position:absolute;
-    bottom:0.5rem;
-    right:0.5rem;
+    bottom:-0.2vh;
+    right:0.25rem;
     border-radius: 0.5rem;
     text-align: center;
     padding:0.3rem;
     border:1px solid transparent;
+    color: var(--culoare-scris);
 }
 #surub{
     position: absolute;
     top: 1vh;
     left: 0.5vw;
     height: auto;
-    width: 20%;
+    width: 10%;
+}
+
+.categorie, .nume{
+    text-align:center;
+    font-weight:bold;
+    bottom: 100px;
+    right: 10px;
+    margin-bottom: 1rem;
+}
+
+.needs-validation {
+    display: none;
+}
+
+.grid-produse .produsfinal h3{
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }

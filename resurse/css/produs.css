@@ -1,0 +1,24 @@
+.imag-produs{
+    border-radius: 2rem;
+    overflow: hidden;
+    width: fit-content;
+    height: auto;
+    box-shadow: 5px 5px 0px 5px var(--culoare-scris);
+    margin-bottom: 0;
+}
+
+.scris{
+    border-radius: 2rem;
+    overflow: hidden;
+    width: fit-content;
+    height: auto;
+    box-shadow: 5px 5px 0px 5px var(--culoare-scris);
+    margin-bottom: 0;
+    margin-top: 5vh;
+    background-color: var(--culoare-fundal-site);
+    margin-bottom: 10vh;
+    
+}
+p,h3,h4{
+    margin: 10px;
+}

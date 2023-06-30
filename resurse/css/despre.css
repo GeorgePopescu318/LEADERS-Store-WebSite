@@ -57,19 +57,34 @@
 }
 .units > :last-child {
   transform: rotatex(180deg) translatey(35%) skew(135deg) translatex(6%);
-  --gradient:repeating-radial-gradient(circle at bottom, transparent, white 4px), linear-gradient(transparent 1%, transparent, white 100%);
+  --gradient:repeating-radial-gradient(circle at bottom, transparent, white 4px);
   -webkit-mask-image: var(--gradient);
   mask-image: var(--gradient);
+  animation-play-state: paused;
+  animation: gradient 1s ease-out infinite;
 }
-.units > :last-child:hover {
-  animation: colorChange 5s infinite;
+.units:hover {
+  animation: gradient;
 }
-
-@keyframes colorChange {
-  0% {
-    background-position: 100% 50%;
+@keyframes gradient{
+  25%{
+    --gradient:repeating-radial-gradient(circle at bottom, transparent 0.5px, white 4px);
+    -webkit-mask-image: var(--gradient);
+    mask-image: var(--gradient);
+  }
+  50%{
+    --gradient:repeating-radial-gradient(circle at bottom, transparent 1px, white 4px);
+    -webkit-mask-image: var(--gradient);
+    mask-image: var(--gradient);
+  }
+  75%{
+    --gradient:repeating-radial-gradient(circle at bottom, transparent 1.5px, white 4px);
+    -webkit-mask-image: var(--gradient);
+    mask-image: var(--gradient);
   }
   100% {
-    background-position: -33% 50%;
+    --gradient:repeating-radial-gradient(circle at bottom, transparent 2px, white 4px);
+    -webkit-mask-image: var(--gradient);
+    mask-image: var(--gradient);
   }
 }

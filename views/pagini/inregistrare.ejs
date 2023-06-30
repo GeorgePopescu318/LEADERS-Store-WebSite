@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Pagina oficială de store a Fundație LEADERS. Aici puteți găsi tricouri, hanorace, cani etc. cu modele voastre preferate cu LEADERS.">
+        <meta name="keywords" content="LEADERS, merch, tricou, hanroc, brățară, fundație, merch, tricou LEADERS, LEADING THE PROGRESS, brățări LEADERS,
+        tricou EXPLORE, tricou EXPERIENCE, tricou CHALLENGE">
+        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+        <title>LEADERS Store - Inregistrare</title>
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/resurse/js/inregistrare.js></script>
+    </head>
+    <%- include("../fragmente/header") %>
+<body>
+    <main>
+        
+    <div class="afisaj">
+        <h1>Inregistrare utilizator</h1>
+        <% if(!locals.raspuns) { %>    
+            <!-- verificam daca am primit un raspuns, daca n am primit raspuns, atunci includem formularul si punem /inregistrare -->
+			<%-include("../fragmente/formular", {action: "/inregistrare"}) %>
+            
+        <% } %>
+        <!-- daca am primit raspuns afisam formularul -->
+	    <% if(locals.raspuns) { %>
+	    <%- locals.raspuns+"<br/>"%>
+	    <% } %>
+	    <% if(locals.err) { %>
+	    <%- locals.err %>
+	    <% } %>
+    </div>
+</main>
+
+    <%- include("../fragmente/footer") %>
+
+</body>
+</html>

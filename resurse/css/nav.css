@@ -18,13 +18,11 @@ nav {
     --culoare-text-meniu: white;
     background-color: var(--culoare-nav);
     height: var(--inaltime-meniu);
-    width: 100%;
     position: sticky;
     padding-right: 0;
-    top: 0;
-    width: 100wv;
+    top: -1px;
     margin-left: calc(-1*var(--spatiere-pagina));
-    width: calc(100vw - 18px);
+    width: calc(100vw);
     font-family: 'Bebas Neue', cursive;
 }
 

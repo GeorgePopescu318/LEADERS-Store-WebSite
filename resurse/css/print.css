@@ -51,10 +51,6 @@
 		list-style-type: none;
 	}
 	
-	nav
-	{
-		page-break-after:always;
-	}
 	#grid-pagina{
 		font-size: 10px;
 		box-sizing:border-box;
